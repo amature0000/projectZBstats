@@ -1,4 +1,4 @@
-# project zomboid professions%traits calculator
+# project zomboid professions&traits calculator
 forked from k0kk0r0's `projectZBstats` repo
 
 # related works
