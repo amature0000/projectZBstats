@@ -20,7 +20,7 @@ let selectedIcons = [];
 let translations = { ko: {}, en: {} };
 
 // ===== 번역 로드 =====
-Papa.parse("translations.csv", {
+Papa.parse("data/translations.csv", {
     download: true,
     header: true,
     complete: (results) => {
@@ -34,12 +34,12 @@ Papa.parse("translations.csv", {
 
 // ===== CSV 로드 =====
 function loadCSV() {
-    Papa.parse("jobs.csv", {
+    Papa.parse("data/jobs.csv", {
         download: true,
         header: true,
         complete: (results) => {
             allJobs = results.data;
-            Papa.parse("items.csv", {
+            Papa.parse("data/items.csv", {
                 download: true,
                 header: true,
                 complete: (results2) => {
