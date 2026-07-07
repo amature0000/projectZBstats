@@ -80,7 +80,7 @@ function createOption(row, isJob) {
     const stats = parseStats(row.stats);
     const iconSrc = row.icon?.trim() || "default.png";
     const banned = row["금지항목"]?.trim() || "";
-    
+
     const label = document.createElement("label");
     label.className = "flex items-center justify-between p-2 border rounded-lg cursor-pointer";
 
@@ -108,7 +108,11 @@ function createOption(row, isJob) {
     input.dataset.iconsrc = iconSrc;
     input.dataset.value = value;
     input.dataset.id = names[1].trim();
-    input.addEventListener("change", updateSum);
+
+    input.addEventListener("change", () => {
+        if (isJob && input.checked) window.currentJob = { name: displayName, icon: iconSrc };
+        updateSum();
+    });
 
     return { label, value };
 }
@@ -179,15 +183,17 @@ function updateSum() {
         // 금지 특성 수집
         const banned = input.dataset.banned;
         if (banned) {
-            banned.split(";").forEach(trait => 
+            banned.split(";").forEach(trait =>
                 bannedTraits.add(trait.trim())
             );
         }
 
         // 아이콘 수집
-        const { iconsrc, displayName } = input.dataset;
-        if (iconsrc && displayName && !selectedIcons.some(icon => icon.src === iconsrc)) {
-            selectedIcons.push({ src: iconsrc, name: displayName });
+        if(input.type == "checkbox") {
+            const { iconsrc, displayName } = input.dataset;
+            if (iconsrc && displayName && !selectedIcons.some(icon => icon.src === iconsrc)) {
+                selectedIcons.push({ src: iconsrc, name: displayName, value: parseInt(input.dataset.value) });
+            }
         }
 
         // 기본 값 누적
@@ -214,7 +220,7 @@ function updateSum() {
             const div = document.createElement('div');
             div.id = `result-${statName}`;
             div.className = `py-1 px-2 border rounded-xl bg-white shadow text-lg font-semibold text-center ${value === 0 ? "text-gray-500" : "text-green-600"}`;
-            
+
             const iconContainer = document.getElementById('result-icons');
             if (iconContainer) {
                 resultPanel.insertBefore(div, iconContainer);
@@ -227,25 +233,33 @@ function updateSum() {
     });
     disableButtons(bannedTraits);
     renderSelectedIcons();
+
+    window.currentResult = {
+        sum,
+        strength,
+        fitness,
+        icons: [...selectedIcons],
+        customStats: { ...statsTotal }
+    };
 }
 
 // ===== 버튼 disable =====
 function disableButtons(bannedTraits) {
     document.querySelectorAll('input[type="checkbox"]').forEach(input => {
-    const id = input.dataset.id;
+        const id = input.dataset.id;
 
-    if (bannedTraits.has(id)) {
-        input.disabled = true;
-        input.parentElement.classList.add("opacity-50");
-        if (input.checked) {
-            input.checked = false;
-            updateSum();
+        if (bannedTraits.has(id)) {
+            input.disabled = true;
+            input.parentElement.classList.add("opacity-50");
+            if (input.checked) {
+                input.checked = false;
+                updateSum();
+            }
+        } else {
+            input.disabled = false;
+            input.parentElement.classList.remove("opacity-50");
         }
-    } else {
-        input.disabled = false;
-        input.parentElement.classList.remove("opacity-50");
-    }
-});
+    });
 }
 
 // ===== 아이콘 렌더링 =====

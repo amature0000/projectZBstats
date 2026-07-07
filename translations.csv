@@ -13,6 +13,7 @@ Trapping,함정,Trapping
 Maintenance,물건관리,Maintenance
 Masonry,석공술,Masonry
 ShortBlunt,짧은 둔기,Short Blunt
+LongBlunt,긴 둔기,Long Blunt
 Carving,조각술,Carving
 Sneaking,은밀한 움직임,Sneaking
 Butchering,도축,Butchering
@@ -29,7 +30,6 @@ Mechanics,기계공학,Mechanics
 Tailoring,재봉,Tailoring
 Glassmaking,유리공예,Glassmaking
 Pottery,도자기,Pottery
-Sprinting,스프린트,Sprinting
 Lightfooted,조용한 발걸음,Light footed
 NightOwl,야행성,Night Owl
 Burglar,좀도둑,Burglar Skill

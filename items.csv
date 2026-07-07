@@ -28,7 +28,7 @@
 부족한 존재감;Inconspicuous,-4,icons/Trait_inconspicuous.png,,Conspicuous
 정리쟁이;Organized,-4,icons/Trait_organized.png,,Disorganized
 강한 회복력;Resilient,-4,icons/Trait_resilient.png,,Prone to Illness
-조깅을 즐기는;Runner,-4,icons/Trait_jogger.png,Sprinting:1,
+조깅을 즐기는;Runner,-4,icons/Trait_jogger.png,Running:1,
 재단술;Sewer,-4,icons/Trait_tailor.png,Tailoring:1,
 만능 수리공;Tinkerer,-4,icons/Trait_tinkerer.png,Maintenance:1,
 체조선수;Gymnast,-5,icons/Trait_gymnast.png,Lightfooted:1;Nimble:1,
