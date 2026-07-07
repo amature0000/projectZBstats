@@ -1,2 +1,5 @@
-# csv file wip
-csv 파일 최신화 작업중(items.scv - negative traits)
+# project zomboid professions%traits calculator
+forked from k0kk0r0's `projectZBstats` repo
+
+# related works
+[All Professions & Traits Info Export](https://steamcommunity.com/sharedfiles/filedetails/?id=3552962959)

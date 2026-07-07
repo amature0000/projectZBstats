@@ -17,7 +17,7 @@
 재주꾼;Crafty,-3,icons/Trait_default.png,,Fast Learner;Slow Learner
 요리;Keen Cook,-3,icons/Trait_cook.png,Cooking:2;Butchering:1,
 정비;Vehicle Knowledge,-3,icons/Trait_mechanics.png,Mechanics:1,
-잠이 없는;Wakeful,-3,icons/Trait_needslesssleep.png,,Needs More Sleep
+잠이 없는;Wakeful,-3,icons/Trait_needslesssleep.png,,Sleepyhead
 아드레날린 중독;Adrenaline Junkie,-4,icons/Trait_adrenalinejunkie.png,,Claustrophobic;Agoraphobic;Cowardly;Desensitized
 낚시꾼;Angler,-4,icons/Trait_fishing.png,Fishing:1,
 야구선수;Baseball Player,-4,icons/Trait_baseballplayer.png,LongBlunt:1,
@@ -49,35 +49,35 @@
 육상 선수;Athletic,-10,icons/Trait_athletic.png,fit:4,Overweight;Slow Metabolism;Fit;Obese;Out of Shape;Unfit;Very Underweight;Smoker
 튼튼함;Strong,-10,icons/Trait_strong.png,str:4,Weak;Feeble;Stout
 
-높은 갈증;High Thirst,1,icons/Trait_highthirst.png,,Low Thirst
 초보 운전;Sunday Driver,1,icons/Trait_sundaydriver.png,,Speed Demon
-빠른 신진대사;Fast Metabolism,2,icons/Trait_emaciated.png,maxfit:-1,Slow Metabolism;Overweight;Very Underweight;Obese
-느린 신진대사;Slow Metabolism,2,icons/Trait_obese.png,maxfit:-1,Fast Metabolism;Obese;Underweight;Very Underweight;Emaciated;Athletic;Fit
-겁쟁이;Cowardly,2,icons/Trait_cowardly.png,,Brave;Desensitized;Adrenaline Junkie
-골초;Smoker,2,icons/Trait_smoker.png,,Athletic
-덤벙댐;Clumsy,2,icons/Trait_clumsy.png,,Graceful
 서투른;All Thumbs,2,icons/Trait_allthumbs.png,,Dextrous
-정독;Slow Reader,2,icons/Trait_slowreader.png,,Fast Reader;Illiterate
+덤벙댐;Clumsy,2,icons/Trait_clumsy.png,,Graceful
+겁쟁이;Cowardly,2,icons/Trait_cowardly.png,,Brave;Desensitized;Adrenaline Junkie
+빠른 신진대사;Fast Metabolism,2,icons/Trait_emaciated.png,,Slow Metabolism;Overweight;Very Underweight;Obese
+느린 신진대사;Slow Metabolism,2,icons/Trait_obese.png,,Fast Metabolism;Obese;Underweight;Very Underweight;Emaciated;Athletic;Fit
+높은 갈증;High Thirst,2,icons/Trait_highthirst.png,,Low Thirst
 짧은 시야;Short Sighted,2,icons/Trait_shortsighted.png,,Eagle Eyed
+정독;Slow Reader,2,icons/Trait_slowreader.png,,Fast Reader;Illiterate
+소화불량;Weak Stomach,2,icons/Trait_weakstomach.png,,Iron Gut
 느린 치유;Slow Healer,3,icons/Trait_slowhealer.png,,Fast Healer
-소화불량;Weak Stomach,3,icons/Trait_weakstomach.png,,Iron Gut
+골초;Smoker,3,icons/Trait_smoker.png,,Athletic
 광장 공포증;Agoraphobic,4,icons/Trait_agoraphobic.png,,Desensitized;Claustrophobic;Adrenaline Junkie
-넘치는 존재감;Conspicuous,4,icons/Trait_conspicuous.png,,Inconspicuous
-대식가;Hearty Appetite,4,icons/Trait_heartyappetite.png,,Very Underweight;Light Eater
 밀실 공포증;Claustrophobic,4,icons/Trait_claustophobic.png,,Brave;Agoraphobic;Adrenaline Junkie;Desensitized
+넘치는 존재감;Conspicuous,4,icons/Trait_conspicuous.png,,Inconspicuous
 어두운 귀;Hard of Hearing,4,icons/Trait_hardofhearing.png,,Keen Hearing;Deaf
-잠꾸러기;Needs More Sleep,4,icons/Trait_needsmoresleep.png,,Wakeful;Restless Sleeper
+대식가;Hearty Appetite,4,icons/Trait_heartyappetite.png,,Very Underweight;Light Eater
 질병에 취약함;Prone to Illness,4,icons/Trait_hypercondriac.png,,Resilient
-평화주의자;Reluctant Fighter,4,icons/Trait_pacifist.png,,
+잠꾸러기;Sleepyhead,4,icons/Trait_needsmoresleep.png,,Wakeful;Restless Sleeper
 천식환자;Short of Breath,5,icons/Trait_asthmatic.png,,
 피 공포증;Fear of Blood,5,icons/Trait_hemophobic.png,,Desensitized
-건강 이상;Out of Shape,6,icons/Trait_out_of_shape.png,fit:-2,Athletic;Fit;Unfit
-느린 학습;Slow Learner,6,icons/Trait_slowlearner.png,,Crafty;Fast Learner
+평화주의자;Reluctant Fighter,5,icons/Trait_pacifist.png,,
 비체계적인;Disorganized,6,icons/Trait_disorganized.png,,Organized
-수면장애;Restless Sleeper,6,icons/Trait_insomniac.png,,
 연약함;Feeble,6,icons/Trait_feeble.png,str:-2,Weak;Stout;Strong
-문맹;Illiterate,8,icons/Trait_illiterate.png,,Slow Reader;Fast Reader
+건강 이상;Out of Shape,6,icons/Trait_out_of_shape.png,fit:-2,Athletic;Fit;Unfit
+수면장애;Restless Sleeper,6,icons/Trait_insomniac.png,,
+느린 학습;Slow Learner,6,icons/Trait_slowlearner.png,,Crafty;Fast Learner
 얇은 피부;Thin-skinned,8,icons/Trait_thinskinned.png,,Thick Skinned
-비실함;Unfit,10,icons/Trait_unfit.png,fit:-4,Athletic;Fit;Out of Shape
+문맹;Illiterate,10,icons/Trait_illiterate.png,,Slow Reader;Fast Reader
 약함;Weak,10,icons/Trait_weak.png,str:-5,Strong;Stout;Feeble
+비실함;Unfit,10,icons/Trait_unfit.png,fit:-4,Athletic;Fit;Out of Shape
 청각장애;Deaf,12,icons/Trait_deaf.png,,Hard of Hearing;Keen Hearing
