@@ -1,26 +1,26 @@
-항목,값,icon,stats
-백수;No job,8,icons/Profession_spiffo.png,
-소방관;Fire Officer,0,icons/Profession_fireofficer2.png,str:1;fit:1;Axe:1;Running:1
-경찰관;Police Officer,-4,icons/Profession_policeofficer2.png,Aiming:3;Nimble:1;Reloading:2
-공원 경비원;Park Ranger,-4,icons/Profession_parkranger2.png,Axe:1;Carpentry:1;Foraging:1;Trapping:1
-건축 인부;Construction Worker,-2,icons/Profession_constructionworker2.png,Carpentry:1;Maintenance:1;Masonry:2;ShortBlunt:3
-보안 경비원;Security Guard,-2,icons/Profession_securityguard2.png,NightOwl:0;Lightfooted:1;Running:2
-목수;Carpenter,1,icons/Profession_hammer2.png,Carpentry:3;Carving:1;Maintenance:1;Masonry:1;ShortBlunt:1
-좀도둑;Burglar,-6,icons/Profession_burglar2.png,Burglar:0;Lightfooted:2;Nimble:2;Sneaking:2
-주방장;Chef,-4,icons/Profession_chef2.png,Keencook:0;Butchering:1;Cooking:3;Maintenance:1;ShortBlade:1
-정비사;DIY Expert,-4,icons/Profession_repairman2.png,Carpentry:1;Carving:1;Maintenance:2;Masonry:1;ShortBlunt:1
-목축업자;Livestock Farmer,-2,icons/Profession_rancher.png,Agriculture:1;AnimalCare:3;Butchering:3
-농부;Crop Farmer,2,icons/Profession_farmer2.png,Agriculture:3
-어부;Angler,-2,icons/Profession_fisher2.png,Fishing:3;Foraging:1
-의사;Docter,2,icons/Profession_doctor2.png,FirstAid:3;ShortBlade:1
-퇴역 군인;Veteran,-8,icons/Profession_veteran2.png,Desensitized:0;Aiming:2;Reloading:2
-간호사;Nurse,2,icons/Profession_nurse.png,FirstAid:2;Lightfooted:1
-벌목꾼;Lumberjack,0,icons/Profession_lumberjack.png,str:1;Axpert:0;Axe:2;Maintenance:1
-피트니스 강사;Fitness Instructor,-6,icons/Profession_fitnessinstructor.png,fit:3;Nutritionist:0;Running:2
-햄버거 조리사;Burger Flipper,2,icons/Profession_burgerflipper.png,Keencook:0;Cooking:2;Maintenance:1;ShortBlade:1
-전기 기사;Electrician,-4,icons/Profession_electrician.png,Generator:0;Electrical:3
-기술자;Engineer,-4,icons/Profession_engineer.png,TrapAndBomb:0;Carpentry:1;Electrical:1;Masonry:1
-용접공;Welder,-6,icons/Profession_metalworker.png,Welding:3
-대장장이;Blacksmith,-6,icons/Profession_smither.png,Blacksmith:0;Maintenance:1;Metalworking:4
-자동차 정비사;Mechanic,-4,icons/Profession_mechanic.png,Vehicle:0;Mechanics:3;ShortBlunt:1
-재단사;Tailor,2,icons/Profession_tailor.png,Tailoring:4
+항목,값,icon,stats,금지항목
+백수;No job,8,icons/Profession_nojob.png,,
+소방관;Fire Officer,0,icons/Profession_fireofficer2.png,str:1;fit:1;Axe:1;Running:1,
+경찰관;Police Officer,-4,icons/Profession_policeofficer2.png,Aiming:3;Nimble:1;Reloading:2,
+공원 경비원;Park Ranger,-4,icons/Profession_parkranger2.png,Axe:1;Carpentry:1;Foraging:1;Trapping:1,
+건축 인부;Construction Worker,-2,icons/Profession_constructionworker2.png,Carpentry:1;Maintenance:1;Masonry:2;ShortBlunt:3,
+보안 경비원;Security Guard,-2,icons/Profession_securityguard2.png,NightOwl:0;Lightfooted:1;Running:2,
+목수;Carpenter,1,icons/Profession_hammer2.png,Carpentry:3;Carving:1;Maintenance:1;Masonry:1;ShortBlunt:1,
+좀도둑;Burglar,-6,icons/Profession_burglar2.png,Burglar:0;Lightfooted:2;Nimble:2;Sneaking:2,
+주방장;Chef,-4,icons/Profession_chef2.png,Keencook:0;Butchering:1;Cooking:3;Maintenance:1;ShortBlade:1,
+정비사;DIY Expert,-4,icons/Profession_repairman2.png,Carpentry:1;Carving:1;Maintenance:2;Masonry:1;ShortBlunt:1,
+목축업자;Livestock Farmer,-2,icons/Profession_rancher.png,Agriculture:1;AnimalCare:3;Butchering:3,
+농부;Crop Farmer,2,icons/Profession_farmer2.png,Agriculture:3,
+어부;Angler,-2,icons/Profession_fisher2.png,Fishing:3;Foraging:1,
+의사;Docter,2,icons/Profession_doctor2.png,FirstAid:3;ShortBlade:1,
+퇴역 군인;Veteran,-8,icons/Profession_veteran2.png,Desensitized:0;Aiming:2;Reloading:2,
+간호사;Nurse,2,icons/Profession_nurse.png,FirstAid:2;Lightfooted:1,
+벌목꾼;Lumberjack,0,icons/Profession_lumberjack.png,str:1;Axpert:0;Axe:2;Maintenance:1,
+피트니스 강사;Fitness Instructor,-6,icons/Profession_fitnessinstructor.png,fit:3;Nutritionist:0;Running:2,
+햄버거 조리사;Burger Flipper,2,icons/Profession_burgerflipper.png,Keencook:0;Cooking:2;Maintenance:1;ShortBlade:1,
+전기 기사;Electrician,-4,icons/Profession_electrician.png,Generator:0;Electrical:3,
+기술자;Engineer,-4,icons/Profession_engineer.png,TrapAndBomb:0;Carpentry:1;Electrical:1;Masonry:1,
+용접공;Welder,-6,icons/Profession_metalworker.png,Welding:3,
+대장장이;Blacksmith,-6,icons/Profession_smither.png,Blacksmith:0;Maintenance:1;Metalworking:4,Blacksmith Knowledge
+자동차 정비사;Mechanic,-4,icons/Profession_mechanic.png,Vehicle:0;Mechanics:3;ShortBlunt:1,
+재단사;Tailor,2,icons/Profession_tailor.png,Tailoring:4,

@@ -4,61 +4,76 @@
 <head>
   <meta charset="UTF-8">
   <title>Project Zomboid B42 stats</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
-  <!-- 파비콘 추가 -->
+  <!-- 파비콘 -->
   <link rel="icon" type="image/png" href="icons/Trait_fastlearner.png">
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
   <div class="bg-white p-6 rounded-2xl shadow-xl w-11/12 max-w-7xl flex">
-
-    <!-- 왼쪽 전체 (스크롤되는 부분) -->
+    <!-- 왼쪽 -->
     <div class="flex-1">
-      <!-- 상단 고정 영역 -->
+      <!-- 상단 고정 -->
       <div class="sticky top-0 bg-white z-10 p-4 rounded-2xl shadow-md">
-        <h2 class="text-2xl font-bold mb-2 text-center">
-          B42 project Zomboid 직업 및 특성 계산기 <span id="version-text"></span>
-        </h2>
-
+        <h2 class="text-2xl font-bold mb-2 text-center">B42 project Zomboid 직업 및 특성 계산기</h2>
         <div class="flex space-x-2 mb-4">
           <button id="lang-ko" class="px-4 py-2 bg-gray-200 rounded">한국어</button>
           <button id="lang-en" class="px-4 py-2 bg-gray-200 rounded">English</button>
         </div>
       </div>
 
-      <!-- 스크롤 영역 -->
-      <div class="flex space-x-6 mt-4 max-h-[500px] overflow-y-auto">
-        <!-- 왼쪽: 직업 리스트 2열 -->
+      <!-- 직업 + 특성 -->
+      <div class="flex space-x-6 mt-4">
+        <!-- 직업 -->
+        <div class="flex-1 flex flex-col min-w-[250px]">
+          <h3 class="text-lg font-bold text-center mb-2">직업</h3>
+          <div class="border rounded-xl p-2 shadow bg-gray-50 max-h-[calc(100vh-220px)] overflow-y-auto">
+            <div id="jobs" class="grid grid-cols-1 lg:grid-cols-2 gap-2"></div>
+          </div>
+        </div>
 
-        <div id="jobs" class="grid grid-cols-1 lg:grid-cols-2 gap-2 flex-1 min-w-[200px]"></div>
-
-        <!-- 가운데: 상태 항목 좌우 2열 -->
-        <div class="flex space-x-4 flex-1">
-          <div id="negative-items" class="flex flex-col space-y-2 flex-1"></div>
-          <div id="positive-items" class="flex flex-col space-y-2 flex-1"></div>
+        <!-- 특성 -->
+        <div class="flex-1 flex flex-col min-w-[350px]">
+          <h3 class="text-lg font-bold text-center mb-2">특성</h3>
+          <div class="border rounded-xl p-2 shadow bg-gray-50 max-h-[calc(100vh-220px)] overflow-y-auto">
+            <div class="flex space-x-4">
+              <div id="negative-items" class="flex flex-col space-y-2 flex-1"></div>
+              <div id="positive-items" class="flex flex-col space-y-2 flex-1"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 오른쪽: 결과 패널 (스크롤 고정됨) -->
-    <div id="result-panel" class="flex flex-col space-y-4 w-32 ml-6 min-w-[150px]">
-      <div id="result-sum" class="p-4 border rounded-xl bg-white shadow text-xl font-bold text-center text-green-600">
+    <!-- 결과 패널 -->
+    <div
+      id="result-panel"
+      class="flex flex-col space-y-4 w-32 ml-6 min-w-[150px]">
+
+      <div
+        id="result-sum"
+        class="p-4 border rounded-xl bg-white shadow text-xl font-bold text-center text-green-600">
         합계: 0
       </div>
-      <div id="result-strength"
-        class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center text-black-600">
+
+      <div
+        id="result-strength"
+        class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center">
         근력: 0
       </div>
-      <div id="result-fitness"
-        class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center text-black-600">
+
+      <div
+        id="result-fitness"
+        class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center">
         체력: 0
       </div>
-      <!-- 추가 항목은 JS에서 동적으로 생성 -->
+
     </div>
   </div>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 // ===== 상수 정의 =====
 const CONSTANTS = {
-    IGNORE_KEYS: ['value', 'str', 'fit', 'displayName', 'iconsrc'],
+    IGNORE_KEYS: ['value', 'str', 'fit', 'displayName', 'iconsrc', 'banned', 'id'],
     DEFAULT_STATS: { strength: 5, fitness: 5 },
     STAT_LIMIT: 10,
     LANGUAGES: { KO: 'ko', EN: 'en' }
@@ -79,7 +79,8 @@ function createOption(row, isJob) {
     const value = parseInt(row["값"]) || 0;
     const stats = parseStats(row.stats);
     const iconSrc = row.icon?.trim() || "default.png";
-
+    const banned = row["금지항목"]?.trim() || "";
+    
     const label = document.createElement("label");
     label.className = "flex items-center justify-between p-2 border rounded-lg cursor-pointer";
 
@@ -95,21 +96,25 @@ function createOption(row, isJob) {
         <input
             type="${isJob ? "radio" : "checkbox"}"
             ${isJob ? 'name="job"' : ""}
-            class="w-4 h-4"
-            data-value="${value}"
-            data-display-name="${displayName}"
-            data-iconsrc="${iconSrc}">
+            class="w-4 h-4">
     `;
 
     const input = label.querySelector("input");
     Object.entries(stats).forEach(([key, val]) => {
         input.dataset[key] = val;
     });
-
+    input.dataset.banned = banned;
+    input.dataset.displayName = displayName;
+    input.dataset.iconsrc = iconSrc;
+    input.dataset.value = value;
+    input.dataset.id = names[1].trim();
     input.addEventListener("change", updateSum);
 
     return { label, value };
 }
+
+// ===== 상쇄 특성에 따라 옵션 비활성화 =====
+// TODO: 상쇄 특성에 따라 라디오 옵션 비활성화
 
 // ===== UI 렌더링 =====
 function renderUI() {
@@ -143,23 +148,6 @@ function resetExtraStats() {
     extraStats = {};
 }
 
-// ===== 무시할 통계 항목 추가 =====
-// TODO: 이게 뭐지
-function getIgnoreStats() {
-    const ignoreStats = [];
-    document.querySelectorAll('input[type="radio"]').forEach(input => {
-        if (input.checked) {
-            const customStats = filterStats(input.dataset);
-            Object.entries(customStats).forEach(([key, value]) => {
-                if (value === 0) {
-                    ignoreStats.push(key);
-                }
-            });
-        }
-    });
-    return ignoreStats;
-}
-
 // ===== 결과 값 업데이트 =====
 function updateResultDisplay(key, value, element) {
     element.classList.remove("text-red-600", "text-black-600", "text-green-600");
@@ -183,13 +171,18 @@ function updateSum() {
     let strength = CONSTANTS.DEFAULT_STATS.strength;
     let fitness = CONSTANTS.DEFAULT_STATS.fitness;
     const statsTotal = {};
-    const ignoreStats = getIgnoreStats();
+    const bannedTraits = new Set();
 
     document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
         if (!input.checked) return;
 
-        // 무시할 항목 체크
-        if (ignoreStats.includes(input.dataset.displayName)) return;
+        // 금지 특성 수집
+        const banned = input.dataset.banned;
+        if (banned) {
+            banned.split(";").forEach(trait => 
+                bannedTraits.add(trait.trim())
+            );
+        }
 
         // 아이콘 수집
         const { iconsrc, displayName } = input.dataset;
@@ -232,8 +225,27 @@ function updateSum() {
         }
         extraStats[statName].innerText = value === 0 ? label : `${label} +${value}`;
     });
-
+    disableButtons(bannedTraits);
     renderSelectedIcons();
+}
+
+// ===== 버튼 disable =====
+function disableButtons(bannedTraits) {
+    document.querySelectorAll('input[type="checkbox"]').forEach(input => {
+    const id = input.dataset.id;
+
+    if (bannedTraits.has(id)) {
+        input.disabled = true;
+        input.parentElement.classList.add("opacity-50");
+        if (input.checked) {
+            input.checked = false;
+            updateSum();
+        }
+    } else {
+        input.disabled = false;
+        input.parentElement.classList.remove("opacity-50");
+    }
+});
 }
 
 // ===== 아이콘 렌더링 =====
