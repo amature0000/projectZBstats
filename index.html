@@ -7,18 +7,33 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-
-  <!-- 파비콘 -->
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.js"></script>
+  
   <link rel="icon" type="image/png" href="icons/Trait_fastlearner.png">
+  <style>
+    body {
+      -webkit-user-select:none;
+      -moz-user-select:none;
+      -ms-user-select:none;
+      user-select:none
+    }
+    .gh-logo {
+      height: 1em;
+      background-color: white;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <div class="bg-white p-6 rounded-2xl shadow-xl w-11/12 max-w-7xl flex">
+<body class="bg-gray-100 flex items-center justify-center h-screen overflow-hidden">
+  <div class="bg-white p-6 rounded-2xl shadow-xl w-11/12 max-w-7xl h-[95vh] overflow-hidden flex">
     <!-- 왼쪽 -->
-    <div class="flex-1">
+    <div class="flex-1 flex flex-col min-h-0">
       <!-- 상단 고정 -->
       <div class="sticky top-0 bg-white z-10 p-4 rounded-2xl shadow-md">
-        <h2 class="text-2xl font-bold mb-2 text-center">B42 project Zomboid 직업 및 특성 계산기</h2>
+        <h2 class="flex items-center justify-center gap-2 text-2xl font-bold mb-2">
+            <a href="https://github.com/amature0000/projectZBstats"><img src="icons/GitHub_Invertocat_Black.svg" class="w-8 h-8"></a>
+            <span id="title_placeholder"></span>
+        </h2>
         <div class="flex space-x-2 mb-4">
           <button id="lang-ko" class="px-4 py-2 bg-gray-200 rounded">한국어</button>
           <button id="lang-en" class="px-4 py-2 bg-gray-200 rounded">English</button>
@@ -26,19 +41,19 @@
       </div>
 
       <!-- 직업 + 특성 -->
-      <div class="flex space-x-6 mt-4">
+      <div class="flex space-x-6 mt-4 flex-1 min-h-0">
         <!-- 직업 -->
-        <div class="flex-1 flex flex-col min-w-[250px]">
-          <h3 class="text-lg font-bold text-center mb-2">직업</h3>
-          <div class="border rounded-xl p-2 shadow bg-gray-50 max-h-[calc(100vh-220px)] overflow-y-auto">
+        <div class="flex-1 flex flex-col min-w-[250px] min-h-0">
+          <h3 class="text-lg font-bold text-center mb-2" id="job_placeholder"></h3>
+          <div class="flex-1 border rounded-xl p-2 shadow bg-gray-50 overflow-y-auto">
             <div id="jobs" class="grid grid-cols-1 lg:grid-cols-2 gap-2"></div>
           </div>
         </div>
 
         <!-- 특성 -->
-        <div class="flex-1 flex flex-col min-w-[350px]">
-          <h3 class="text-lg font-bold text-center mb-2">특성</h3>
-          <div class="border rounded-xl p-2 shadow bg-gray-50 max-h-[calc(100vh-220px)] overflow-y-auto">
+        <div class="flex-1 flex flex-col min-w-[350px] min-h-0">
+          <h3 class="text-lg font-bold text-center mb-2" id="trait_placeholder"></h3>
+          <div class="flex-1 border rounded-xl p-2 shadow bg-gray-50 overflow-y-auto">
             <div class="flex space-x-4">
               <div id="negative-items" class="flex flex-col space-y-2 flex-1"></div>
               <div id="positive-items" class="flex flex-col space-y-2 flex-1"></div>
@@ -49,31 +64,39 @@
     </div>
 
     <!-- 결과 패널 -->
-    <div
-      id="result-panel"
-      class="flex flex-col space-y-4 w-32 ml-6 min-w-[150px]">
+    <div id="result-panel" class="flex flex-col space-y-4 w-32 ml-6 min-w-[150px]">
+      <button id="open-preview" class="px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700">
+        Download
+      </button>
 
-      <div
-        id="result-sum"
-        class="p-4 border rounded-xl bg-white shadow text-xl font-bold text-center text-green-600">
-        합계: 0
+      <div id="result-sum" class="p-4 border rounded-xl bg-white shadow text-xl font-bold text-center text-green-600"></div>
+      <div id="result-strength" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center"></div>
+      <div id="result-fitness" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center"></div>
+    </div>
+  </div>
+  <div id="preview-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+
+    <div class="bg-white rounded-2xl shadow-2xl w-[700px] max-h-[90vh] overflow-auto p-6">
+
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-bold">Preview</h2>
+
+        <div class="flex justify-end gap-3 mt-6">
+          <button id="close-preview" class="px-4 py-2 border rounded">
+            close
+          </button>
+
+          <button id="download-preview" class="px-4 py-2 bg-blue-600 text-white rounded">
+            save
+          </button>
+        </div>
       </div>
 
-      <div
-        id="result-strength"
-        class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center">
-        근력: 0
-      </div>
-
-      <div
-        id="result-fitness"
-        class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center">
-        체력: 0
-      </div>
-
+      <div id="preview-content" class="bg-white border rounded-xl p-6 space-y-6"></div>
     </div>
   </div>
   <script src="script.js"></script>
+  <script src="rendermodal.js"></script>
 </body>
 
 </html>

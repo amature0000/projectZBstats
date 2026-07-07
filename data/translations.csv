@@ -1,4 +1,7 @@
 key,ko,en
+title_placeholder,B42 Project Zomboid 직업 및 특성 계산기,B42 Project Zomboid Professions&Traits Calculator
+job_placeholder,직업,Profession
+trait_placeholder,특성,Trait
 sum,포인트,Point
 strength,근력,Strength
 fitness,체력,Fitness
@@ -13,13 +16,14 @@ Trapping,함정,Trapping
 Maintenance,물건관리,Maintenance
 Masonry,석공술,Masonry
 ShortBlunt,짧은 둔기,Short Blunt
+LongBlunt,긴 둔기,Long Blunt
 Carving,조각술,Carving
 Sneaking,은밀한 움직임,Sneaking
 Butchering,도축,Butchering
 Cooking,요리,Cooking
 ShortBlade,단검,Short Blade
 Agriculture,농사,Agriculture
-AnimalCare,목축,Animal Care
+AnimalCare,축산,Animal Care
 Fishing,낚시,Fishing
 FirstAid,의료,First Aid
 Electrical,전기공학,Electrical
@@ -29,15 +33,17 @@ Mechanics,기계공학,Mechanics
 Tailoring,재봉,Tailoring
 Glassmaking,유리공예,Glassmaking
 Pottery,도자기,Pottery
-Sprinting,스프린트,Sprinting
 Lightfooted,조용한 발걸음,Light footed
 NightOwl,야행성,Night Owl
-Burglar,좀도둑 기술,Burglar Skill
+Burglar,좀도둑,Burglar Skill
 Desensitized,둔감한,Desensitized
 Axpert,도끼 전문가,Axpert
 Nutritionist,영양사,Nutritionist
-Keencook,요리 레시피,Keen Cook
+Keencook,요리,Keen Cook
 Generator,발전기 사용가능,Generator
 TrapAndBomb,함정과 폭탄제작,Trap and Bomb
 Blacksmith,대장장이 기술,Blacksmith
 Vehicle,차량 정비,Vehicle Knowledge
+Inventive,창의적인,Inventive
+Knapping,석기제작,Knapping
+Herbalist,약초꾼,Herbalist
