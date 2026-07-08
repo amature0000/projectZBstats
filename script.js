@@ -117,9 +117,6 @@ function createOption(row, isJob) {
     return { label, value };
 }
 
-// ===== 상쇄 특성에 따라 옵션 비활성화 =====
-// TODO: 상쇄 특성에 따라 라디오 옵션 비활성화
-
 // ===== UI 렌더링 =====
 function renderUI() {
     jobsDiv.innerHTML = "";
@@ -142,6 +139,10 @@ function renderUI() {
                 negativeDiv.appendChild(option.label);
         }
     });
+    
+    document.getElementById("title_placeholder").innerText = translations[currentLang].title_placeholder;
+    document.getElementById("job_placeholder").innerText = translations[currentLang].job_placeholder;
+    document.getElementById("trait_placeholder").innerText = translations[currentLang].trait_placeholder;
 
     updateSum();
 }
