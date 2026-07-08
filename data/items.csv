@@ -39,7 +39,7 @@
 빠른 회복;Fast Healer,-6,icons/Trait_fasthealer.png,,Slow Healer
 현자;Fast Learner,-6,icons/Trait_fastlearner.png,,Crafty;Slow Learner
 건강한;Fit,-6,icons/Trait_fit.png,fit:2,Obese;Athletic;Out of Shape;Unfit;Overweight;Slow Metabolism
-정찰병 경험;Former Scout,-6,icons/Trait_formerscout.png,FirstAid:1;Foraging:1,
+정찰병 경험;Former Scout,-6,icons/Trait_formerscout.png,FirstAid:1;Foraging:1;Fishing:1,
 예민한 청력;Keen Hearing,-6,icons/Trait_keenhearing.png,,Deaf;Hard of Hearing
 통통함;Stout,-6,icons/Trait_stout.png,str:2,Weak;Feeble;Strong
 능숙함;Handy,-8,icons/Trait_handy.png,Maintenance:1;Carving:1;Carpentry:1;Masonry:1,
