@@ -59,21 +59,21 @@ function renderPreview() {
         <div class="grid grid-cols-3 gap-4 text-center">
 
             <div class="border rounded p-3">
-                <div class="font-bold">근력</div>
+                <div class="font-bold">${translations[currentLang].strength}</div>
                 <div class="text-2xl">
                     ${window.currentResult.strength}
                 </div>
             </div>
 
             <div class="border rounded p-3">
-                <div class="font-bold">체력</div>
+                <div class="font-bold">${translations[currentLang].fitness}</div>
                 <div class="text-2xl">
                     ${window.currentResult.fitness}
                 </div>
             </div>
 
             <div class="border rounded p-3">
-                <div class="font-bold">포인트</div>
+                <div class="font-bold">${translations[currentLang].sum}</div>
                 <div class="text-2xl">
                     ${window.currentResult.sum}
                 </div>
