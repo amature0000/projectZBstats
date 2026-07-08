@@ -100,23 +100,39 @@ async function download() {
     const node = document.getElementById("preview-content");
 
     try {
-
-        const dataUrl = await htmlToImage.toPng(node, {
+        await document.fonts.ready;
+        const blob = await htmlToImage.toBlob(node, {
             pixelRatio: 2,
             cacheBust: true,
             backgroundColor: "#ffffff"
         });
 
-        const link = document.createElement("a");
-        const jobName = currentJob?.name ?? "NoJob";
+        if (!blob) throw new Error("failed to create image blob.");
 
-        link.download = `${jobName}_${Date.now()}.png`;
-        link.href = dataUrl;
-        link.click();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
 
+        a.href = url;
+        a.download = `${currentJob?.name ?? "NoJob"}.png`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        URL.revokeObjectURL(url);
+
+        if (!window.ClipboardItem) {
+            console.warn("faild to copy.");
+            return;
+        }
+
+        await navigator.clipboard.write([
+            new ClipboardItem({
+                "image/png": blob
+            })
+        ]);
     } catch (err) {
         console.error(err);
-        alert("Failed to generate image.");
+        alert("failed to download.");
     }
 }
 
