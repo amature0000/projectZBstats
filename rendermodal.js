@@ -113,7 +113,7 @@ async function download() {
         const a = document.createElement("a");
 
         a.href = url;
-        a.download = `${currentJob?.name ?? "NoJob"}.png`;
+        a.download = `${currentJob?.name ?? "NoJob"}_${Date.now()}.png`;
         document.body.appendChild(a);
         a.click();
         a.remove();
