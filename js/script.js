@@ -309,9 +309,3 @@ document.getElementById("lang-en").addEventListener("click", () => {
 document.getElementById("rst-btn").addEventListener("click", () => {
     window.location.href = window.location.pathname;
 });
-
-document.getElementById("load-btn").addEventListener("click", () => {
-    const url = document.getElementById("build-list").value;
-    if (!url) return;
-    location.href = url;
-});
