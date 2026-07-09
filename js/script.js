@@ -110,7 +110,6 @@ function createOption(row, isJob) {
     input.dataset.id = names[1].trim();
 
     input.addEventListener("change", () => {
-        if (isJob && input.checked) window.currentJob = { name: displayName, icon: iconSrc };
         updateSum();
     });
 
@@ -187,7 +186,7 @@ function updateSum() {
     let fitness = CONSTANTS.DEFAULT_STATS.fitness;
     const statsTotal = {};
     const bannedTraits = new Set();
-
+        
     document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
         if (!input.checked) return;
 
@@ -200,6 +199,9 @@ function updateSum() {
         }
 
         // 아이콘 수집
+        if(input.type == "radio") {
+            window.currentJob = { name: input.dataset.displayName, icon: input.dataset.iconsrc };
+        }
         if(input.type == "checkbox") {
             const { iconsrc, displayName } = input.dataset;
             if (iconsrc && displayName && !selectedIcons.some(icon => icon.src === iconsrc)) {
