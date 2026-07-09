@@ -143,7 +143,8 @@ function renderUI() {
     document.getElementById("title_placeholder").innerText = translations[currentLang].title_placeholder;
     document.getElementById("job_placeholder").innerText = translations[currentLang].job_placeholder;
     document.getElementById("trait_placeholder").innerText = translations[currentLang].trait_placeholder;
-
+    
+    loadStateFromUrl();
     updateSum();
 }
 
@@ -242,6 +243,8 @@ function updateSum() {
         icons: [...selectedIcons],
         customStats: { ...statsTotal }
     };
+
+    serializeStateToUrl();
 }
 
 // ===== 버튼 disable =====
