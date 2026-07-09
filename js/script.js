@@ -144,6 +144,12 @@ function renderUI() {
     document.getElementById("job_placeholder").innerText = translations[currentLang].job_placeholder;
     document.getElementById("trait_placeholder").innerText = translations[currentLang].trait_placeholder;
     
+    document.getElementById("build-list_placeholder").innerText = translations[currentLang].build_list_placeholder;
+    document.getElementById("load-btn").innerText = translations[currentLang].load;
+    document.getElementById("rst-btn").innerText = translations[currentLang].reset;
+    document.getElementById("open-preview").innerText = translations[currentLang].open_preview;
+    
+    refreshBuildList();
     loadStateFromUrl();
     updateSum();
 }
@@ -289,7 +295,7 @@ function renderSelectedIcons() {
 // ===== 초기화 =====
 loadCSV();
 
-// ===== 언어 변경 =====
+// ==========
 document.getElementById("lang-ko").addEventListener("click", () => {
     currentLang = CONSTANTS.LANGUAGES.KO;
     renderUI();
@@ -302,4 +308,10 @@ document.getElementById("lang-en").addEventListener("click", () => {
 
 document.getElementById("rst-btn").addEventListener("click", () => {
     window.location.href = window.location.pathname;
+});
+
+document.getElementById("load-btn").addEventListener("click", () => {
+    const url = document.getElementById("build-list").value;
+    if (!url) return;
+    location.href = url;
 });

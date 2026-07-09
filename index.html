@@ -38,6 +38,7 @@
         </h2>
         <div class="flex justify-between items-center mb-4">
 
+          <!-- 언어 선택 -->
           <div class="flex space-x-2">
             <button id="lang-ko" class="px-4 py-2 bg-gray-200 rounded">
               한국어
@@ -47,9 +48,23 @@
             </button>
           </div>
 
-          <button id="rst-btn" class="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition-colors">
-            reset
-          </button>
+          <!-- 저장된 빌드 + Load + Reset -->
+          <div class="flex items-center gap-2">
+
+            <select id="build-list"
+              class="w-56 px-3 py-2 border rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option id="build-list_placeholder" value=""></option>
+            </select>
+
+            <button id="load-btn"
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors">
+            </button>
+
+            <button id="rst-btn"
+              class="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition-colors">
+            </button>
+
+          </div>
 
         </div>
       </div>
@@ -80,7 +95,7 @@
     <!-- 결과 패널 -->
     <div id="result-panel" class="flex flex-col space-y-4 w-32 ml-6 min-w-[150px]">
       <button id="open-preview" class="px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700">
-        Download
+        save
       </button>
 
       <div id="result-sum" class="p-4 border rounded-xl bg-white shadow text-xl font-bold text-center text-green-600">
@@ -96,15 +111,18 @@
     <div class="bg-white rounded-2xl shadow-2xl w-[700px] max-h-[90vh] overflow-auto p-6">
 
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold">Preview</h2>
-
         <div class="flex justify-end gap-3 mt-6">
+          <input id="build-name" type="text" placeholder="Build name"
+            class="w-56 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+
           <button id="close-preview" class="px-4 py-2 border rounded">
             close
           </button>
-
-          <button id="download-preview" class="px-4 py-2 bg-blue-600 text-white rounded">
+          <button id="save-preview" class="px-4 py-2 bg-blue-600 text-white rounded">
             save
+          </button>
+          <button id="download-preview" class="px-4 py-2 bg-blue-600 text-white rounded">
+            download image
           </button>
         </div>
       </div>
@@ -112,9 +130,10 @@
       <div id="preview-content" class="bg-white border rounded-xl p-6 space-y-6"></div>
     </div>
   </div>
-  <script src="urlparams.js"></script>
-  <script src="script.js"></script>
-  <script src="rendermodal.js"></script>
+  <script src="js/cache.js"></script>
+  <script src="js/urlparams.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/rendermodal.js"></script>
 </body>
 
 </html>

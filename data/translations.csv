@@ -2,6 +2,10 @@ key,ko,en
 title_placeholder,B42 Project Zomboid 직업 및 특성 계산기,B42 Project Zomboid Professions&Traits Calculator
 job_placeholder,직업,Profession
 trait_placeholder,특성,Trait
+build_list_placeholder,빌드 선택,Select Build
+load,불러오기,Load
+reset,초기화,Reset
+open_preview,저장,save
 sum,포인트,Point
 strength,근력,Strength
 fitness,체력,Fitness

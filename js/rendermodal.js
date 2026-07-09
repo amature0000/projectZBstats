@@ -142,7 +142,6 @@ async function download() {
 }
 
 document.getElementById("open-preview").addEventListener("click", () => {
-
     renderPreview();
 
     document
@@ -156,7 +155,6 @@ document.getElementById("open-preview").addEventListener("click", () => {
 });
 
 document.getElementById("close-preview").addEventListener("click", () => {
-
     document
         .getElementById("preview-modal")
         .classList.add("hidden");
@@ -165,6 +163,17 @@ document.getElementById("close-preview").addEventListener("click", () => {
         .getElementById("preview-modal")
         .classList.remove("flex");
 
+});
+
+document.getElementById("save-preview").addEventListener("click", () => {
+    const buildName = document.getElementById("build-name").value;
+    if (!buildName) {
+        alert("failed to save: no build name.");
+        return;
+    }
+
+    const url = window.location.href;
+    saveBuild(buildName, url);
 });
 
 document.getElementById("download-preview").addEventListener("click", download);
