@@ -24,10 +24,10 @@
   </style>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <div class="bg-white p-6 rounded-2xl shadow-xl w-11/12 max-w-7xl flex">
+<body class="bg-gray-100 flex items-center justify-center h-screen overflow-hidden">
+  <div class="bg-white p-6 rounded-2xl shadow-xl w-11/12 max-w-7xl h-[95vh] overflow-hidden flex">
     <!-- 왼쪽 -->
-    <div class="flex-1">
+    <div class="flex-1 flex flex-col min-h-0">
       <!-- 상단 고정 -->
       <div class="sticky top-0 bg-white z-10 p-4 rounded-2xl shadow-md">
         <h2 class="flex items-center justify-center gap-2 text-2xl font-bold mb-2">
@@ -41,19 +41,19 @@
       </div>
 
       <!-- 직업 + 특성 -->
-      <div class="flex space-x-6 mt-4">
+      <div class="flex space-x-6 mt-4 flex-1 min-h-0">
         <!-- 직업 -->
-        <div class="flex-1 flex flex-col min-w-[250px]">
+        <div class="flex-1 flex flex-col min-w-[250px] min-h-0">
           <h3 class="text-lg font-bold text-center mb-2" id="job_placeholder"></h3>
-          <div class="border rounded-xl p-2 shadow bg-gray-50 max-h-[calc(100vh-220px)] overflow-y-auto">
+          <div class="flex-1 border rounded-xl p-2 shadow bg-gray-50 overflow-y-auto">
             <div id="jobs" class="grid grid-cols-1 lg:grid-cols-2 gap-2"></div>
           </div>
         </div>
 
         <!-- 특성 -->
-        <div class="flex-1 flex flex-col min-w-[350px]">
+        <div class="flex-1 flex flex-col min-w-[350px] min-h-0">
           <h3 class="text-lg font-bold text-center mb-2" id="trait_placeholder"></h3>
-          <div class="border rounded-xl p-2 shadow bg-gray-50 max-h-[calc(100vh-220px)] overflow-y-auto">
+          <div class="flex-1 border rounded-xl p-2 shadow bg-gray-50 overflow-y-auto">
             <div class="flex space-x-4">
               <div id="negative-items" class="flex flex-col space-y-2 flex-1"></div>
               <div id="positive-items" class="flex flex-col space-y-2 flex-1"></div>
