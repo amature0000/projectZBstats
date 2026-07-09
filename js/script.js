@@ -144,7 +144,6 @@ function renderUI() {
     document.getElementById("job_placeholder").innerText = translations[currentLang].job_placeholder;
     document.getElementById("trait_placeholder").innerText = translations[currentLang].trait_placeholder;
     
-    document.getElementById("build-list_placeholder").innerText = translations[currentLang].build_list_placeholder;
     document.getElementById("load-btn").innerText = translations[currentLang].load;
     document.getElementById("rst-btn").innerText = translations[currentLang].reset;
     document.getElementById("open-preview").innerText = translations[currentLang].open_preview;
