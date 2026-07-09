@@ -25,6 +25,7 @@ function renderPreview() {
 
     const positiveIcons = window.currentResult.icons.filter(icon => icon.value < 0);
     const negativeIcons = window.currentResult.icons.filter(icon => icon.value > 0);
+    const neutralIcons = window.currentResult.icons.filter(icon => icon.value === 0);
 
     const iconHTML = window.currentResult.icons.map(icon => `
         <div class="flex flex-col items-center w-20">
@@ -91,6 +92,10 @@ function renderPreview() {
 
             <div class="flex flex-wrap gap-4">
                 ${makeIconList(negativeIcons, "text-red-600")}
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+                ${makeIconList(neutralIcons, "text-gray-600")}
             </div>
         </div>
     `;
