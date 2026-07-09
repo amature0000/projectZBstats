@@ -151,8 +151,8 @@ function renderUI() {
     document.getElementById("save-preview").innerText = translations[currentLang].save_preview;
     document.getElementById("download-preview").innerText = translations[currentLang].download_preview;
     
-    refreshBuildList();
     loadStateFromUrl();
+    refreshBuildList();
     updateSum();
 }
 

@@ -1,5 +1,3 @@
-var run_once = false;
-
 function getSelectedJobId() {
     var jobInput = document.querySelector('input[type="radio"]:checked');
     return jobInput ? jobInput.dataset.id : null;
@@ -28,27 +26,19 @@ function serializeStateToUrl() {
 
 function loadStateFromUrl() {
     try {
-        if (run_once) return;
-
         var params = new URLSearchParams(window.location.search);
         var job = params.get('job');
         var traits = params.get('traits') ? params.get('traits').split(',') : [];
-        var changed = false;
         if (job || traits.length) {
             document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
                 if (input.dataset.id === job) {
                     input.checked = true;
-                    changed = true;
                 }
                 if (traits.includes(input.dataset.id)) {
                     input.checked = true;
-                    changed = true;
                 }
             });
         }
-
-        if (changed) updateSum();
-        run_once = true;
     } catch (e) {
         console.warn('loadStateFromUrl failed', e);
     }
