@@ -110,7 +110,6 @@ function createOption(row, isJob) {
     input.dataset.id = names[1].trim();
 
     input.addEventListener("change", () => {
-        if (isJob && input.checked) window.currentJob = { name: displayName, icon: iconSrc };
         updateSum();
     });
 
@@ -143,7 +142,18 @@ function renderUI() {
     document.getElementById("title_placeholder").innerText = translations[currentLang].title_placeholder;
     document.getElementById("job_placeholder").innerText = translations[currentLang].job_placeholder;
     document.getElementById("trait_placeholder").innerText = translations[currentLang].trait_placeholder;
+    
+    document.getElementById("load-btn").innerText = translations[currentLang].load;
+    document.getElementById("del-btn").innerText = translations[currentLang].del;
+    document.getElementById("rst-btn").innerText = translations[currentLang].reset;
+    document.getElementById("open-preview").innerText = translations[currentLang].open_preview;
 
+    document.getElementById("close-preview").innerText = translations[currentLang].close_preview;
+    document.getElementById("save-preview").innerText = translations[currentLang].save_preview;
+    document.getElementById("download-preview").innerText = translations[currentLang].download_preview;
+    
+    loadStateFromUrl();
+    refreshBuildList();
     updateSum();
 }
 
@@ -177,7 +187,7 @@ function updateSum() {
     let fitness = CONSTANTS.DEFAULT_STATS.fitness;
     const statsTotal = {};
     const bannedTraits = new Set();
-
+        
     document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
         if (!input.checked) return;
 
@@ -190,6 +200,9 @@ function updateSum() {
         }
 
         // 아이콘 수집
+        if(input.type == "radio") {
+            window.currentJob = { name: input.dataset.displayName, icon: input.dataset.iconsrc };
+        }
         if(input.type == "checkbox") {
             const { iconsrc, displayName } = input.dataset;
             if (iconsrc && displayName && !selectedIcons.some(icon => icon.src === iconsrc)) {
@@ -242,6 +255,8 @@ function updateSum() {
         icons: [...selectedIcons],
         customStats: { ...statsTotal }
     };
+
+    serializeStateToUrl();
 }
 
 // ===== 버튼 disable =====
@@ -286,7 +301,7 @@ function renderSelectedIcons() {
 // ===== 초기화 =====
 loadCSV();
 
-// ===== 언어 변경 =====
+// ==========
 document.getElementById("lang-ko").addEventListener("click", () => {
     currentLang = CONSTANTS.LANGUAGES.KO;
     renderUI();
@@ -295,4 +310,8 @@ document.getElementById("lang-ko").addEventListener("click", () => {
 document.getElementById("lang-en").addEventListener("click", () => {
     currentLang = CONSTANTS.LANGUAGES.EN;
     renderUI();
+});
+
+document.getElementById("rst-btn").addEventListener("click", () => {
+    window.location.href = window.location.pathname;
 });

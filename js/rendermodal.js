@@ -118,7 +118,7 @@ async function download() {
         const a = document.createElement("a");
 
         a.href = url;
-        a.download = `${currentJob?.name ?? "NoJob"}_${Date.now()}.png`;
+        a.download = `${window.currentJob?.name ?? "NA"}_${Date.now()}.png`;
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -142,7 +142,6 @@ async function download() {
 }
 
 document.getElementById("open-preview").addEventListener("click", () => {
-
     renderPreview();
 
     document
@@ -156,7 +155,6 @@ document.getElementById("open-preview").addEventListener("click", () => {
 });
 
 document.getElementById("close-preview").addEventListener("click", () => {
-
     document
         .getElementById("preview-modal")
         .classList.add("hidden");
@@ -165,6 +163,18 @@ document.getElementById("close-preview").addEventListener("click", () => {
         .getElementById("preview-modal")
         .classList.remove("flex");
 
+});
+
+document.getElementById("save-preview").addEventListener("click", () => {
+    const buildName = document.getElementById("build-name").value;
+    if (!buildName) {
+        alert("failed to save: no build name.");
+        return;
+    }
+
+    const url = window.location.href;
+    saveBuild(buildName, url);
+    refreshBuildList();
 });
 
 document.getElementById("download-preview").addEventListener("click", download);

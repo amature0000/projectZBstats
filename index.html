@@ -3,20 +3,24 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Project Zomboid B42 stats</title>
+  <title>Project Zomboid B42 calculator</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Project Zomboid calculator">
+  <meta property="og:description" content="Character traits and occupation build calculator">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.js"></script>
-  
+
   <link rel="icon" type="image/png" href="icons/Trait_fastlearner.png">
   <style>
     body {
-      -webkit-user-select:none;
-      -moz-user-select:none;
-      -ms-user-select:none;
-      user-select:none
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
     }
+
     .gh-logo {
       height: 1em;
       background-color: white;
@@ -24,19 +28,51 @@
   </style>
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center h-screen overflow-hidden">
+<body class="bg-gray-100 flex items-center justify-center min-h-dvh">
   <div class="bg-white p-6 rounded-2xl shadow-xl w-11/12 max-w-7xl h-[95vh] overflow-hidden flex">
     <!-- 왼쪽 -->
     <div class="flex-1 flex flex-col min-h-0">
       <!-- 상단 고정 -->
       <div class="sticky top-0 bg-white z-10 p-4 rounded-2xl shadow-md">
         <h2 class="flex items-center justify-center gap-2 text-2xl font-bold mb-2">
-            <a href="https://github.com/amature0000/projectZBstats"><img src="icons/GitHub_Invertocat_Black.svg" class="w-8 h-8"></a>
-            <span id="title_placeholder"></span>
+          <a href="https://github.com/amature0000/projectZBstats"><img src="icons/GitHub_Invertocat_Black.svg"
+              class="w-8 h-8"></a>
+          <span id="title_placeholder"></span>
         </h2>
-        <div class="flex space-x-2 mb-4">
-          <button id="lang-ko" class="px-4 py-2 bg-gray-200 rounded">한국어</button>
-          <button id="lang-en" class="px-4 py-2 bg-gray-200 rounded">English</button>
+        <div class="flex justify-between items-center mb-4">
+
+          <!-- 언어 선택 -->
+          <div class="flex space-x-2">
+            <button id="lang-ko" class="px-4 py-2 bg-gray-200 rounded">
+              한국어
+            </button>
+            <button id="lang-en" class="px-4 py-2 bg-gray-200 rounded">
+              English
+            </button>
+          </div>
+
+          <!-- 저장된 빌드 + Load + Reset -->
+          <div class="flex items-center gap-2">
+
+            <select id="build-list"
+              class="w-56 px-3 py-2 border rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option id="build-list_placeholder" value=""></option>
+            </select>
+
+            <button id="load-btn"
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors">
+            </button>
+            <button id="del-btn"
+              class="px-4 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 transition-colors">
+            </button>
+
+
+            <button id="rst-btn"
+              class="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition-colors">
+            </button>
+
+          </div>
+
         </div>
       </div>
 
@@ -66,12 +102,14 @@
     <!-- 결과 패널 -->
     <div id="result-panel" class="flex flex-col space-y-4 w-32 ml-6 min-w-[150px]">
       <button id="open-preview" class="px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700">
-        Download
       </button>
 
-      <div id="result-sum" class="p-4 border rounded-xl bg-white shadow text-xl font-bold text-center text-green-600"></div>
-      <div id="result-strength" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center"></div>
-      <div id="result-fitness" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center"></div>
+      <div id="result-sum" class="p-4 border rounded-xl bg-white shadow text-xl font-bold text-center text-green-600">
+      </div>
+      <div id="result-strength" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center">
+      </div>
+      <div id="result-fitness" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center">
+      </div>
     </div>
   </div>
   <div id="preview-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
@@ -79,15 +117,15 @@
     <div class="bg-white rounded-2xl shadow-2xl w-[700px] max-h-[90vh] overflow-auto p-6">
 
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold">Preview</h2>
-
         <div class="flex justify-end gap-3 mt-6">
-          <button id="close-preview" class="px-4 py-2 border rounded">
-            close
-          </button>
+          <input id="build-name" type="text" placeholder="Build name"
+            class="w-56 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
 
+          <button id="close-preview" class="px-4 py-2 border rounded">
+          </button>
+          <button id="save-preview" class="px-4 py-2 bg-blue-600 text-white rounded">
+          </button>
           <button id="download-preview" class="px-4 py-2 bg-blue-600 text-white rounded">
-            save
           </button>
         </div>
       </div>
@@ -95,8 +133,10 @@
       <div id="preview-content" class="bg-white border rounded-xl p-6 space-y-6"></div>
     </div>
   </div>
-  <script src="script.js"></script>
-  <script src="rendermodal.js"></script>
+  <script src="js/cache.js"></script>
+  <script src="js/urlparams.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/rendermodal.js"></script>
 </body>
 
 </html>
