@@ -147,6 +147,10 @@ function renderUI() {
     document.getElementById("load-btn").innerText = translations[currentLang].load;
     document.getElementById("rst-btn").innerText = translations[currentLang].reset;
     document.getElementById("open-preview").innerText = translations[currentLang].open_preview;
+
+    document.getElementById("close-preview").innerText = translations[currentLang].close_preview;
+    document.getElementById("save-preview").innerText = translations[currentLang].save_preview;
+    document.getElementById("download-preview").innerText = translations[currentLang].download_preview;
     
     refreshBuildList();
     loadStateFromUrl();

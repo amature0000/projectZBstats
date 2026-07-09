@@ -174,6 +174,7 @@ document.getElementById("save-preview").addEventListener("click", () => {
 
     const url = window.location.href;
     saveBuild(buildName, url);
+    refreshBuildList();
 });
 
 document.getElementById("download-preview").addEventListener("click", download);
