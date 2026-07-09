@@ -8,15 +8,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.js"></script>
-  
+
   <link rel="icon" type="image/png" href="icons/Trait_fastlearner.png">
   <style>
     body {
-      -webkit-user-select:none;
-      -moz-user-select:none;
-      -ms-user-select:none;
-      user-select:none
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
     }
+
     .gh-logo {
       height: 1em;
       background-color: white;
@@ -31,12 +32,25 @@
       <!-- 상단 고정 -->
       <div class="sticky top-0 bg-white z-10 p-4 rounded-2xl shadow-md">
         <h2 class="flex items-center justify-center gap-2 text-2xl font-bold mb-2">
-            <a href="https://github.com/amature0000/projectZBstats"><img src="icons/GitHub_Invertocat_Black.svg" class="w-8 h-8"></a>
-            <span id="title_placeholder"></span>
+          <a href="https://github.com/amature0000/projectZBstats"><img src="icons/GitHub_Invertocat_Black.svg"
+              class="w-8 h-8"></a>
+          <span id="title_placeholder"></span>
         </h2>
-        <div class="flex space-x-2 mb-4">
-          <button id="lang-ko" class="px-4 py-2 bg-gray-200 rounded">한국어</button>
-          <button id="lang-en" class="px-4 py-2 bg-gray-200 rounded">English</button>
+        <div class="flex justify-between items-center mb-4">
+
+          <div class="flex space-x-2">
+            <button id="lang-ko" class="px-4 py-2 bg-gray-200 rounded">
+              한국어
+            </button>
+            <button id="lang-en" class="px-4 py-2 bg-gray-200 rounded">
+              English
+            </button>
+          </div>
+
+          <button id="rst-btn" class="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition-colors">
+            reset
+          </button>
+
         </div>
       </div>
 
@@ -69,9 +83,12 @@
         Download
       </button>
 
-      <div id="result-sum" class="p-4 border rounded-xl bg-white shadow text-xl font-bold text-center text-green-600"></div>
-      <div id="result-strength" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center"></div>
-      <div id="result-fitness" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center"></div>
+      <div id="result-sum" class="p-4 border rounded-xl bg-white shadow text-xl font-bold text-center text-green-600">
+      </div>
+      <div id="result-strength" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center">
+      </div>
+      <div id="result-fitness" class="px-4 py-2 border rounded-xl bg-white shadow text-lg font-semibold text-center">
+      </div>
     </div>
   </div>
   <div id="preview-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">

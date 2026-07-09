@@ -299,3 +299,7 @@ document.getElementById("lang-en").addEventListener("click", () => {
     currentLang = CONSTANTS.LANGUAGES.EN;
     renderUI();
 });
+
+document.getElementById("rst-btn").addEventListener("click", () => {
+    window.location.href = window.location.pathname;
+});
