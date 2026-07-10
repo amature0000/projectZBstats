@@ -30,10 +30,10 @@
 강한 회복력;Resilient,-4,icons/Trait_resilient.png,,Prone to Illness
 조깅을 즐기는;Runner,-4,icons/Trait_jogger.png,Running:1,
 재단술;Sewer,-4,icons/Trait_tailor.png,Tailoring:1,
-만능 수리공;Tinkerer,-4,icons/Trait_tinkerer.png,Maintenance:1,
+땜장이;Tinkerer,-4,icons/Trait_tinkerer.png,Maintenance:1,
 체조선수;Gymnast,-5,icons/Trait_gymnast.png,Lightfooted:1;Nimble:1,
 도보 여행자;Hiker,-5,icons/Trait_hiker.png,Foraging:1;Trapping:1,
-사격의 명수;Target Shooter,-5,icons/Trait_target_shooter.png,Aiming:1,
+사격수;Target Shooter,-5,icons/Trait_target_shooter.png,Aiming:1,
 대장장이 기술;Blacksmith Knowledge,-6,icons/Trait_blacksmith.png,Maintenance:1;Blacksmith:2,
 싸움꾼;Brawler,-6,icons/Trait_brawler.png,LongBlunt:1;Axe:1,
 빠른 회복;Fast Healer,-6,icons/Trait_fasthealer.png,,Slow Healer
@@ -45,7 +45,7 @@
 능숙함;Handy,-8,icons/Trait_handy.png,Maintenance:1;Carving:1;Carpentry:1;Masonry:1,
 사냥꾼;Hunter,-8,icons/Trait_hunter.png,Butchering:1;ShortBlade:1;Aiming:1;Trapping:1;Sneaking:1,
 두꺼운 피부;Thick Skinned,-8,icons/Trait_thickskinned.png,,Thin-skinned
-황무지 지식;Wilderness Knowledge,-8,icons/Trait_wildernessknowledge.png,Knapping:0;Foraging:1;Maintenance:1;Carving:1,
+황야 지식;Bushcrafter,-8,icons/Trait_wildernessknowledge.png,Knapping:0;Foraging:1;Maintenance:1;Carving:1,
 육상 선수;Athletic,-10,icons/Trait_athletic.png,fit:4,Overweight;Slow Metabolism;Fit;Obese;Out of Shape;Unfit;Very Underweight;Smoker
 튼튼함;Strong,-10,icons/Trait_strong.png,str:4,Weak;Feeble;Stout
 
