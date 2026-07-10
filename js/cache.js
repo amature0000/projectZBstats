@@ -1,5 +1,5 @@
 const CACHE_KEY = "pz-build-cache";
-
+const select = document.getElementById("build-list");
 function saveCache(cache) {
     localStorage.setItem(CACHE_KEY, JSON.stringify(cache));
 }
@@ -23,6 +23,12 @@ function saveBuild(name, url) {
     saveCache(cache);
 }
 
+function deleteBuild(name) {
+    const cache = loadCache();
+    delete cache[name];
+    saveCache(cache);
+}
+
 function refreshBuildList() {
     const select = document.getElementById("build-list");
     select.innerHTML = `<option id="build-list_placeholder" value="">${translations[currentLang].build_list_placeholder}</option>`;
@@ -37,7 +43,15 @@ function refreshBuildList() {
 }
 
 document.getElementById("load-btn").addEventListener("click", () => {
-    const url = document.getElementById("build-list").value;
+    const url = select.value;
     if (!url) return;
     location.href = url;
+});
+
+document.getElementById("del-btn").addEventListener("click", () => {
+    const name = select.options[select.selectedIndex].text;
+    if (!name) return;
+
+    deleteBuild(name);
+    refreshBuildList();
 });

@@ -7,6 +7,7 @@ save_preview,저장,save
 download_preview,이미지 다운로드,download image
 build_list_placeholder,빌드 선택,Select Build
 load,불러오기,Load
+del,삭제,Delete
 reset,초기화,Reset
 open_preview,저장,save
 sum,포인트,Point
