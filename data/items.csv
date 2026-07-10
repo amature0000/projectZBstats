@@ -16,7 +16,7 @@
 고양이의 눈;Cat's Eyes,-3,icons/Trait_nightvision.png,,
 재주꾼;Crafty,-3,icons/Trait_default.png,,Fast Learner;Slow Learner
 요리;Keen Cook,-3,icons/Trait_cook.png,Cooking:2;Butchering:1,
-정비;Vehicle Knowledge,-3,icons/Trait_mechanics.png,Mechanics:1,
+정비;Vehicle Knowledge,-3,icons/Trait_mechanics.png,Vehicle:1,
 잠이 없는;Wakeful,-3,icons/Trait_needslesssleep.png,,Sleepyhead
 아드레날린 중독;Adrenaline Junkie,-4,icons/Trait_adrenalinejunkie.png,,Claustrophobic;Agoraphobic;Cowardly;Desensitized
 낚시꾼;Angler,-4,icons/Trait_fishing.png,Fishing:1,
