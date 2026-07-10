@@ -22,5 +22,5 @@ DIY 전문가;DIY Expert,-2,icons/Profession_repairman2.png,Inventive:0;Carpentr
 기술자;Engineer,-4,icons/Profession_engineer.png,TrapAndBomb:0;Carpentry:1;Electrical:1;Masonry:1,
 용접공;Welder,-6,icons/Profession_metalworker.png,Welding:4,
 대장장이;Blacksmith,-6,icons/Profession_smither.png,Blacksmith:0;Maintenance:1;Metalworking:4;ShortBlunt:1,Blacksmith Knowledge
-자동차 정비공;Mechanic,-4,icons/Profession_mechanic.png,Vehicle:0;Mechanics:4;Welding:1,Vehicle Knowledge
+자동차 정비공;Mechanic,-4,icons/Profession_mechanic.png,Vehicle:0;Vehicle:4;Welding:1,Vehicle Knowledge
 재단사;Tailor,2,icons/Profession_tailor.png,Tailoring:4,
