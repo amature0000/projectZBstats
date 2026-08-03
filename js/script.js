@@ -18,6 +18,7 @@ let currentLang = CONSTANTS.LANGUAGES.KO;
 let extraStats = {};
 let selectedIcons = [];
 let translations = { ko: {}, en: {} };
+let descriptions = { ko: {}, en: {} };
 
 // ===== 번역 로드 =====
 Papa.parse("data/translations.csv", {
@@ -32,22 +33,41 @@ Papa.parse("data/translations.csv", {
     }
 });
 
-// ===== CSV 로드 =====
-function loadCSV() {
-    Papa.parse("data/jobs.csv", {
+// ===== 설명 로드 =====
+function loadDescriptions(callback) {
+    Papa.parse("data/desc.csv", {
         download: true,
         header: true,
         complete: (results) => {
-            allJobs = results.data;
-            Papa.parse("data/items.csv", {
-                download: true,
-                header: true,
-                complete: (results2) => {
-                    allItems = results2.data;
-                    renderUI();
-                }
+            results.data.forEach(row => {
+                const key = (row.key || "").trim();
+                if (!key) return;
+                if (row.ko) descriptions.ko[key] = row.ko.trim();
+                if (row.en) descriptions.en[key] = row.en.trim();
             });
+            callback();
         }
+    });
+}
+
+// ===== CSV 로드 =====
+function loadCSV() {
+    loadDescriptions(() => {
+        Papa.parse("data/jobs.csv", {
+            download: true,
+            header: true,
+            complete: (results) => {
+                allJobs = results.data;
+                Papa.parse("data/items.csv", {
+                    download: true,
+                    header: true,
+                    complete: (results2) => {
+                        allItems = results2.data;
+                        renderUI();
+                    }
+                });
+            }
+        });
     });
 }
 
@@ -87,6 +107,8 @@ function createOption(row, isJob) {
     const iconSize = isJob ? "w-16 h-16" : "w-6 h-6";
     const colorClass = !isJob ? (value >= 0 ? "text-red-600" : "text-green-600") : "";
     const displayValue = value >= 0 ? `+${value}` : value;
+    const descriptionKey = names[1].trim();
+    const description = descriptions[currentLang][descriptionKey];
 
     label.innerHTML = `
         <div class="flex items-center min-w-[150px]">
@@ -100,6 +122,24 @@ function createOption(row, isJob) {
     `;
 
     const input = label.querySelector("input");
+    const icon = label.querySelector("img");
+    // 툴팁 설정
+    if (!isJob) {
+        label.dataset.title = description;
+        const tooltip = document.getElementById('custom-tooltip');
+        label.addEventListener('mouseenter', () => {
+            tooltip.textContent = label.getAttribute('data-title');
+            tooltip.style.display = 'block';
+        });
+        label.addEventListener('mousemove', (e) => {
+            tooltip.style.left = (e.clientX + 15) + 'px';
+            tooltip.style.top = (e.clientY + 15) + 'px';
+        });
+        label.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none';
+        });
+    }
+
     Object.entries(stats).forEach(([key, val]) => {
         input.dataset[key] = val;
     });
@@ -107,7 +147,7 @@ function createOption(row, isJob) {
     input.dataset.displayName = displayName;
     input.dataset.iconsrc = iconSrc;
     input.dataset.value = value;
-    input.dataset.id = names[1].trim();
+    input.dataset.id = descriptionKey;
 
     input.addEventListener("change", () => {
         updateSum();
@@ -302,15 +342,15 @@ function renderSelectedIcons() {
 loadCSV();
 
 // ==========
-document.getElementById("lang-ko").addEventListener("click", () => {
-    currentLang = CONSTANTS.LANGUAGES.KO;
-    renderUI();
-});
+// document.getElementById("lang-ko").addEventListener("click", () => {
+//     currentLang = CONSTANTS.LANGUAGES.KO;
+//     renderUI();
+// });
 
-document.getElementById("lang-en").addEventListener("click", () => {
-    currentLang = CONSTANTS.LANGUAGES.EN;
-    renderUI();
-});
+// document.getElementById("lang-en").addEventListener("click", () => {
+//     currentLang = CONSTANTS.LANGUAGES.EN;
+//     renderUI();
+// });
 
 document.getElementById("rst-btn").addEventListener("click", () => {
     window.location.href = window.location.pathname;

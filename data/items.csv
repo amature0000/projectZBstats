@@ -45,7 +45,7 @@
 능숙함;Handy,-8,icons/Trait_handy.png,Maintenance:1;Carving:1;Carpentry:1;Masonry:1,
 사냥꾼;Hunter,-8,icons/Trait_hunter.png,Butchering:1;ShortBlade:1;Aiming:1;Trapping:1;Sneaking:1,
 두꺼운 피부;Thick Skinned,-8,icons/Trait_thickskinned.png,,Thin-skinned
-황야 지식;Bushcrafter,-8,icons/Trait_wildernessknowledge.png,Knapping:0;Foraging:1;Maintenance:1;Carving:1,
+황야 지식;Bushcrafter,-8,icons/Trait_wildernessknowledge.png,Knapping:1;Foraging:1;Maintenance:1;Carving:1,
 육상 선수;Athletic,-10,icons/Trait_athletic.png,fit:4,Overweight;Slow Metabolism;Fit;Obese;Out of Shape;Unfit;Very Underweight;Smoker
 튼튼함;Strong,-10,icons/Trait_strong.png,str:4,Weak;Feeble;Stout
 

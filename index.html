@@ -25,6 +25,15 @@
       height: 1em;
       background-color: white;
     }
+
+    #custom-tooltip {
+      background-color: #333;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap; 
+    }
   </style>
 </head>
 
@@ -38,18 +47,18 @@
           <a href="https://github.com/amature0000/projectZBstats"><img src="icons/GitHub_Invertocat_Black.svg"
               class="w-8 h-8"></a>
           <span id="title_placeholder"></span>
-        </h2>
+        </h2><br>
         <div class="flex justify-between items-center mb-4">
 
-          <!-- 언어 선택 -->
-          <div class="flex space-x-2">
+          <!-- 언어 선택 - disabled --> 
+          <!-- <div class="flex space-x-2">
             <button id="lang-ko" class="px-4 py-2 bg-gray-200 rounded">
               한국어
             </button>
             <button id="lang-en" class="px-4 py-2 bg-gray-200 rounded">
               English
             </button>
-          </div>
+          </div> -->
 
           <!-- 저장된 빌드 + Load + Reset -->
           <div class="flex items-center gap-2">
@@ -133,6 +142,8 @@
       <div id="preview-content" class="bg-white border rounded-xl p-6 space-y-6"></div>
     </div>
   </div>
+  <!-- 툴팁 박스 -->
+  <div id="custom-tooltip" style="display: none; position: fixed; pointer-events: none; z-index: 9999;"></div>
   <script src="js/cache.js"></script>
   <script src="js/urlparams.js"></script>
   <script src="js/script.js"></script>
