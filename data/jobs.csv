@@ -7,7 +7,7 @@
 보안 경비원;Security Guard,-2,icons/Profession_securityguard2.png,NightOwl:0;Lightfooted:1;ShortBlunt:1;Running:2,
 목수;Carpenter,-2,icons/Profession_hammer2.png,Carpentry:4;Maintenance:1;Masonry:1;ShortBlunt:1;Carving:1,
 좀도둑;Burglar,-6,icons/Profession_burglar2.png,Burglar:0;Lightfooted:2;Nimble:2;Sneaking:2,
-주방장;Chef,-4,icons/Profession_chef2.png,Keencook:0;Butchering:2;Cooking:4;Maintenance:1;ShortBlade:1,Keen Cook
+주방장;Chef,-4,icons/Profession_chef2.png,Butchering:2;Cooking:4;Maintenance:1;ShortBlade:1,Keen Cook
 DIY 전문가;DIY Expert,-2,icons/Profession_repairman2.png,Inventive:0;Carpentry:1;Maintenance:2;Masonry:1;ShortBlunt:1,Inventive
 축산업자;Livestock Farmer,0,icons/Profession_rancher.png,str:1;AnimalCare:4;Butchering:3,
 농부;Crop Farmer,0,icons/Profession_farmer2.png,Agriculture:4;AnimalCare:1;str:1,
@@ -17,9 +17,9 @@ DIY 전문가;DIY Expert,-2,icons/Profession_repairman2.png,Inventive:0;Carpentr
 간호사;Nurse,2,icons/Profession_nurse.png,NightOwl:0;str:1;FirstAid:3;Lightfooted:1,
 벌목꾼;Lumberjack,0,icons/Profession_lumberjack.png,str:1;Axpert:0;Axe:2;Maintenance:1,
 피트니스 강사;Fitness Instructor,-6,icons/Profession_fitnessinstructor.png,fit:3;str:1;Nutritionist:0;Running:2,Nutritionist
-햄버거 조리사;Burger Flipper,2,icons/Profession_burgerflipper.png,Keencook:0;Cooking:2;Maintenance:1;ShortBlade:1,Keen Cook
-전기 기사;Electrician,-4,icons/Profession_electrician.png,Generator:0;Electrical:3,
-기술자;Engineer,-4,icons/Profession_engineer.png,TrapAndBomb:0;Carpentry:1;Electrical:1;Masonry:1,
+햄버거 조리사;Burger Flipper,2,icons/Profession_burgerflipper.png,Cooking:2;Maintenance:1;ShortBlade:1,Keen Cook
+전기 기사;Electrician,-4,icons/Profession_electrician.png,Electrical:3,
+기술자;Engineer,-4,icons/Profession_engineer.png,Carpentry:1;Electrical:1;Masonry:1,
 용접공;Welder,-6,icons/Profession_metalworker.png,Welding:4,
 대장장이;Blacksmith,-6,icons/Profession_smither.png,Blacksmith:0;Maintenance:1;Blacksmith:4;ShortBlunt:1,Blacksmith Knowledge
 자동차 정비공;Mechanic,-4,icons/Profession_mechanic.png,Vehicle:0;Vehicle:4;Welding:1,Vehicle Knowledge
