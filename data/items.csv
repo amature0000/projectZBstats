@@ -45,7 +45,7 @@
 능숙함;Handy,-8,icons/Trait_handy.png,Maintenance:1;Carving:1;Carpentry:1;Masonry:1,
 사냥꾼;Hunter,-8,icons/Trait_hunter.png,Butchering:1;ShortBlade:1;Aiming:1;Trapping:1;Sneaking:1,
 두꺼운 피부;Thick Skinned,-8,icons/Trait_thickskinned.png,,Thin-skinned
-황야 지식;Bushcrafter,-8,icons/Trait_wildernessknowledge.png,Knapping:0;Foraging:1;Maintenance:1;Carving:1,
+황야 지식;Bushcrafter,-8,icons/Trait_wildernessknowledge.png,Knapping:1;Foraging:1;Maintenance:1;Carving:1,
 육상 선수;Athletic,-10,icons/Trait_athletic.png,fit:4,Overweight;Slow Metabolism;Fit;Obese;Out of Shape;Unfit;Very Underweight;Smoker
 튼튼함;Strong,-10,icons/Trait_strong.png,str:4,Weak;Feeble;Stout
 
@@ -53,7 +53,7 @@
 서투른;All Thumbs,2,icons/Trait_allthumbs.png,,Dextrous
 덤벙댐;Clumsy,2,icons/Trait_clumsy.png,,Graceful
 겁쟁이;Cowardly,2,icons/Trait_cowardly.png,,Brave;Desensitized;Adrenaline Junkie
-빠른 신진대사;Fast Metabolism,2,icons/Trait_emaciated.png,,Slow Metabolism;Overweight;Very Underweight;Obese
+빠른 신진대사;Fast Metabolism,2,icons/Trait_emaciated.png,fit:-1,Slow Metabolism;Overweight;Very Underweight;Obese
 느린 신진대사;Slow Metabolism,2,icons/Trait_obese.png,,Fast Metabolism;Obese;Underweight;Very Underweight;Emaciated;Athletic;Fit
 높은 갈증;High Thirst,2,icons/Trait_highthirst.png,,Low Thirst
 짧은 시야;Short Sighted,2,icons/Trait_shortsighted.png,,Eagle Eyed
