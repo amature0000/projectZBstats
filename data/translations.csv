@@ -36,7 +36,6 @@ Fishing,낚시,Fishing
 FirstAid,의료,First Aid
 Electrical,전기공학,Electrical
 Welding,용접,Welding
-Metalworking,금속세공,Metalworking
 Mechanics,기계공학,Mechanics
 Tailoring,재봉,Tailoring
 Glassmaking,유리공예,Glassmaking
@@ -50,7 +49,7 @@ Nutritionist,영양사,Nutritionist
 Keencook,요리,Keen Cook
 Generator,발전기 사용가능,Generator
 TrapAndBomb,함정과 폭탄제작,Trap and Bomb
-Blacksmith,대장장이 기술,Blacksmith
+Blacksmith,금속세공,Blacksmith
 Vehicle,차량정비,Vehicle Knowledge
 Inventive,창의적인,Inventive
 Knapping,석기제작,Knapping
