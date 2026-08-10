@@ -53,7 +53,7 @@
 서투른;All Thumbs,2,icons/Trait_allthumbs.png,,Dextrous
 덤벙댐;Clumsy,2,icons/Trait_clumsy.png,,Graceful
 겁쟁이;Cowardly,2,icons/Trait_cowardly.png,,Brave;Desensitized;Adrenaline Junkie
-빠른 신진대사;Fast Metabolism,2,icons/Trait_emaciated.png,,Slow Metabolism;Overweight;Very Underweight;Obese
+빠른 신진대사;Fast Metabolism,2,icons/Trait_emaciated.png,fit:-1,Slow Metabolism;Overweight;Very Underweight;Obese
 느린 신진대사;Slow Metabolism,2,icons/Trait_obese.png,,Fast Metabolism;Obese;Underweight;Very Underweight;Emaciated;Athletic;Fit
 높은 갈증;High Thirst,2,icons/Trait_highthirst.png,,Low Thirst
 짧은 시야;Short Sighted,2,icons/Trait_shortsighted.png,,Eagle Eyed
