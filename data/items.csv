@@ -1,83 +1,83 @@
 항목,값,icon,stats,금지항목
-속도광;Speed Demon,-1,icons/Trait_speeddemon.png,,Sunday Driver
-장인;Artisan,-2,icons/Trait_artisan.png,Glassmaking:1;Pottery:1,
-민첩한;Dextrous,-2,icons/Trait_dextrous.png,,All Thumbs
-속독;Fast Reader,-2,icons/Trait_fastreader.png,,Slow Reader;Illiterate
-응급처치;First Aider,-2,icons/Trait_firstaid.png,FirstAid:1,
-정원사;Gardener,-2,icons/Trait_gardener.png,Agriculture:1,
-창의적;Inventive,-2,icons/Trait_inventive.png,,
-강철 위장;Iron Gut,-2,icons/Trait_irongut.png,,Weak Stomach
-소식가;Light Eater,-2,icons/Trait_lighteater.png,,Hearty Appetite;Obese
-낮은 갈증;Low Thirst,-2,icons/Trait_lowthirst.png,,High Thirst
-석공;Mason,-2,icons/Trait_mason.png,Masonry:2,
-영양사;Nutritionist,-2,icons/Trait_nutritionist.png,,
-등산애호가;Outdoorsy,-2,icons/Trait_outdoorsman.png,,
-조각가;Whittler,-2,icons/Trait_whittler.png,Carving:2,
-고양이의 눈;Cat's Eyes,-3,icons/Trait_nightvision.png,,
-재주꾼;Crafty,-3,icons/Trait_default.png,,Fast Learner;Slow Learner
-요리;Keen Cook,-3,icons/Trait_cook.png,Cooking:2;Butchering:1,
-정비;Vehicle Knowledge,-3,icons/Trait_mechanics.png,Vehicle:1,
-잠이 없는;Wakeful,-3,icons/Trait_needslesssleep.png,,Sleepyhead
-아드레날린 중독;Adrenaline Junkie,-4,icons/Trait_adrenalinejunkie.png,,Claustrophobic;Agoraphobic;Cowardly;Desensitized
-낚시꾼;Angler,-4,icons/Trait_fishing.png,Fishing:1,
-야구선수;Baseball Player,-4,icons/Trait_baseballplayer.png,LongBlunt:1,
-용감한;Brave,-4,icons/Trait_brave.png,,Cowardly;Agoraphobic;Claustrophobic;Desensitized
-매의 눈;Eagle Eyed,-4,icons/Trait_eagleeyed.png,,Short Sighted
-우아함;Graceful,-4,icons/Trait_graceful.png,,Clumsy
-약초꾼;Herbalist,-4,icons/Trait_herbalist.png,Foraging:1,
-부족한 존재감;Inconspicuous,-4,icons/Trait_inconspicuous.png,,Conspicuous
-정리쟁이;Organized,-4,icons/Trait_organized.png,,Disorganized
-강한 회복력;Resilient,-4,icons/Trait_resilient.png,,Prone to Illness
-조깅을 즐기는;Runner,-4,icons/Trait_jogger.png,Running:1,
-재단술;Sewer,-4,icons/Trait_tailor.png,Tailoring:1,
-땜장이;Tinkerer,-4,icons/Trait_tinkerer.png,Maintenance:1,
-체조선수;Gymnast,-5,icons/Trait_gymnast.png,Lightfooted:1;Nimble:1,
-도보 여행자;Hiker,-5,icons/Trait_hiker.png,Foraging:1;Trapping:1,
-사격수;Target Shooter,-5,icons/Trait_target_shooter.png,Aiming:1,
-대장장이 기술;Blacksmith Knowledge,-6,icons/Trait_blacksmith.png,Maintenance:1;Blacksmith:2,
-싸움꾼;Brawler,-6,icons/Trait_brawler.png,LongBlunt:1;Axe:1,
-빠른 회복;Fast Healer,-6,icons/Trait_fasthealer.png,,Slow Healer
-현자;Fast Learner,-6,icons/Trait_fastlearner.png,,Crafty;Slow Learner
-건강한;Fit,-6,icons/Trait_fit.png,fit:2,Obese;Athletic;Out of Shape;Unfit;Overweight;Slow Metabolism
-정찰병 경험;Former Scout,-6,icons/Trait_formerscout.png,FirstAid:1;Foraging:1;Fishing:1,
-예민한 청력;Keen Hearing,-6,icons/Trait_keenhearing.png,,Deaf;Hard of Hearing
-통통함;Stout,-6,icons/Trait_stout.png,str:2,Weak;Feeble;Strong
-능숙함;Handy,-8,icons/Trait_handy.png,Maintenance:1;Carving:1;Carpentry:1;Masonry:1,
-사냥꾼;Hunter,-8,icons/Trait_hunter.png,Butchering:1;ShortBlade:1;Aiming:1;Trapping:1;Sneaking:1,
-두꺼운 피부;Thick Skinned,-8,icons/Trait_thickskinned.png,,Thin-skinned
-황야 지식;Bushcrafter,-8,icons/Trait_wildernessknowledge.png,Knapping:1;Foraging:1;Maintenance:1;Carving:1,
-육상 선수;Athletic,-10,icons/Trait_athletic.png,fit:4,Overweight;Slow Metabolism;Fit;Obese;Out of Shape;Unfit;Very Underweight;Smoker
-튼튼함;Strong,-10,icons/Trait_strong.png,str:4,Weak;Feeble;Stout
+속도광;speeddemon,-1,icons/Trait_speeddemon.png,,sundaydriver
+장인;artisan,-2,icons/Trait_artisan.png,Glassmaking:1;Pottery:1,
+민첩한;dextrous,-2,icons/Trait_dextrous.png,,allthumbs
+속독;fastreader,-2,icons/Trait_fastreader.png,,slowreader;illiterate
+응급처치;firstaid,-2,icons/Trait_firstaid.png,FirstAid:1,
+정원사;gardener,-2,icons/Trait_gardener.png,Agriculture:1,
+창의적;inventive,-2,icons/Trait_inventive.png,,
+강철 위장;irongut,-2,icons/Trait_irongut.png,,weakstomach
+소식가;lighteater,-2,icons/Trait_lighteater.png,,heartyappetite;Obese
+낮은 갈증;lowthirst,-2,icons/Trait_lowthirst.png,,highthirst
+석공;mason,-2,icons/Trait_mason.png,Masonry:2,
+영양사;nutritionist,-2,icons/Trait_nutritionist.png,,
+등산애호가;outdoorsman,-2,icons/Trait_outdoorsman.png,,
+조각가;whittler,-2,icons/Trait_whittler.png,Carving:2,
+고양이의 눈;nightvision,-3,icons/Trait_nightvision.png,,
+재주꾼;crafty,-3,icons/Trait_default.png,,fastlearner;slowlearner
+요리;cook,-3,icons/Trait_cook.png,Cooking:2;Butchering:1,
+정비;mechanics,-3,icons/Trait_mechanics.png,Vehicle:1,
+잠이 없는;needslesssleep,-3,icons/Trait_needslesssleep.png,,needsmoresleep
+아드레날린 중독;adrenalinejunkie,-4,icons/Trait_adrenalinejunkie.png,,claustrophobic;agoraphobic;cowardly;Desensitized
+낚시꾼;fishing,-4,icons/Trait_fishing.png,Fishing:1,
+야구선수;baseballplayer,-4,icons/Trait_baseballplayer.png,LongBlunt:1,
+용감한;brave,-4,icons/Trait_brave.png,,cowardly;agoraphobic;claustrophobic;Desensitized
+매의 눈;eagleeyed,-4,icons/Trait_eagleeyed.png,,shortsighted
+우아함;graceful,-4,icons/Trait_graceful.png,,clumsy
+약초꾼;herbalist,-4,icons/Trait_herbalist.png,Foraging:1,
+부족한 존재감;inconspicuous,-4,icons/Trait_inconspicuous.png,,conspicuous
+정리쟁이;organized,-4,icons/Trait_organized.png,,disorganized
+강한 회복력;resilient,-4,icons/Trait_resilient.png,,pronetoillness
+조깅을 즐기는;jogger,-4,icons/Trait_jogger.png,Running:1,
+재단술;tailor,-4,icons/Trait_tailor.png,Tailoring:1,
+땜장이;tinkerer,-4,icons/Trait_tinkerer.png,Maintenance:1,
+체조선수;gymnast,-5,icons/Trait_gymnast.png,Lightfooted:1;Nimble:1,
+도보 여행자;hiker,-5,icons/Trait_hiker.png,Foraging:1;Trapping:1,
+사격수;target_shooter,-5,icons/Trait_target_shooter.png,Aiming:1,
+대장장이 기술;blacksmith,-6,icons/Trait_blacksmith.png,Maintenance:1;Blacksmith:2,
+싸움꾼;brawler,-6,icons/Trait_brawler.png,LongBlunt:1;Axe:1,
+빠른 회복;fasthealer,-6,icons/Trait_fasthealer.png,,slowhealer
+현자;fastlearner,-6,icons/Trait_fastlearner.png,,crafty;slowlearner
+건강한;fit,-6,icons/Trait_fit.png,fit:2,Obese;athletic;out of shape;unfit;Overweight;weightgain
+정찰병 경험;formerscout,-6,icons/Trait_formerscout.png,FirstAid:1;Foraging:1;Fishing:1,
+예민한 청력;keenhearing,-6,icons/Trait_keenhearing.png,,deaf;hardofhearing
+통통함;stout,-6,icons/Trait_stout.png,str:2,weak;feeble;strong
+능숙함;handy,-8,icons/Trait_handy.png,Maintenance:1;Carving:1;Carpentry:1;Masonry:1,
+사냥꾼;hunter,-8,icons/Trait_hunter.png,Butchering:1;ShortBlade:1;Aiming:1;Trapping:1;Sneaking:1,
+두꺼운 피부;thickskinned,-8,icons/Trait_thickskinned.png,,thinskinned
+황야 지식;wildernessknowledge,-8,icons/Trait_wildernessknowledge.png,Knapping:1;Foraging:1;Maintenance:1;Carving:1,
+육상 선수;athletic,-10,icons/Trait_athletic.png,fit:4,Overweight;weightgain;fit;Obese;out of shape;unfit;Very Underweight;smoker
+튼튼함;strong,-10,icons/Trait_strong.png,str:4,weak;feeble;stout
 
-초보 운전;Sunday Driver,1,icons/Trait_sundaydriver.png,,Speed Demon
-서투른;All Thumbs,2,icons/Trait_allthumbs.png,,Dextrous
-덤벙댐;Clumsy,2,icons/Trait_clumsy.png,,Graceful
-겁쟁이;Cowardly,2,icons/Trait_cowardly.png,,Brave;Desensitized;Adrenaline Junkie
-빠른 신진대사;Fast Metabolism,2,icons/Trait_emaciated.png,fit:-1,Slow Metabolism;Overweight;Very Underweight;Obese
-느린 신진대사;Slow Metabolism,2,icons/Trait_obese.png,,Fast Metabolism;Obese;Underweight;Very Underweight;Emaciated;Athletic;Fit
-높은 갈증;High Thirst,2,icons/Trait_highthirst.png,,Low Thirst
-짧은 시야;Short Sighted,2,icons/Trait_shortsighted.png,,Eagle Eyed
-정독;Slow Reader,2,icons/Trait_slowreader.png,,Fast Reader;Illiterate
-소화불량;Weak Stomach,2,icons/Trait_weakstomach.png,,Iron Gut
-느린 치유;Slow Healer,3,icons/Trait_slowhealer.png,,Fast Healer
-골초;Smoker,3,icons/Trait_smoker.png,,Athletic
-광장 공포증;Agoraphobic,4,icons/Trait_agoraphobic.png,,Desensitized;Claustrophobic;Adrenaline Junkie
-밀실 공포증;Claustrophobic,4,icons/Trait_claustophobic.png,,Brave;Agoraphobic;Adrenaline Junkie;Desensitized
-넘치는 존재감;Conspicuous,4,icons/Trait_conspicuous.png,,Inconspicuous
-어두운 귀;Hard of Hearing,4,icons/Trait_hardofhearing.png,,Keen Hearing;Deaf
-대식가;Hearty Appetite,4,icons/Trait_heartyappetite.png,,Very Underweight;Light Eater
-질병에 취약함;Prone to Illness,4,icons/Trait_hypercondriac.png,,Resilient
-잠꾸러기;Sleepyhead,4,icons/Trait_needsmoresleep.png,,Wakeful;Restless Sleeper
-천식환자;Short of Breath,5,icons/Trait_asthmatic.png,,
-피 공포증;Fear of Blood,5,icons/Trait_hemophobic.png,,Desensitized
-평화주의자;Reluctant Fighter,5,icons/Trait_pacifist.png,,
-비체계적인;Disorganized,6,icons/Trait_disorganized.png,,Organized
-연약함;Feeble,6,icons/Trait_feeble.png,str:-2,Weak;Stout;Strong
-건강 이상;Out of Shape,6,icons/Trait_out_of_shape.png,fit:-2,Athletic;Fit;Unfit
-수면장애;Restless Sleeper,6,icons/Trait_insomniac.png,,
-느린 학습;Slow Learner,6,icons/Trait_slowlearner.png,,Crafty;Fast Learner
-얇은 피부;Thin-skinned,8,icons/Trait_thinskinned.png,,Thick Skinned
-문맹;Illiterate,10,icons/Trait_illiterate.png,,Slow Reader;Fast Reader
-약함;Weak,10,icons/Trait_weak.png,str:-5,Strong;Stout;Feeble
-비실함;Unfit,10,icons/Trait_unfit.png,fit:-4,Athletic;Fit;Out of Shape
-청각장애;Deaf,12,icons/Trait_deaf.png,,Hard of Hearing;Keen Hearing
+초보 운전;sundaydriver,1,icons/Trait_sundaydriver.png,,speeddemon
+서투른;allthumbs,2,icons/Trait_allthumbs.png,,dextrous
+덤벙댐;clumsy,2,icons/Trait_clumsy.png,,graceful
+겁쟁이;cowardly,2,icons/Trait_cowardly.png,,brave;Desensitized;adrenalinejunkie
+빠른 신진대사;weightloss,2,icons/Trait_emaciated.png,fit:-1,weightgain;Overweight;Very Underweight;Obese
+느린 신진대사;weightgain,2,icons/Trait_obese.png,,weightloss;Obese;Underweight;Very Underweight;Emaciated;athletic;fit
+높은 갈증;highthirst,2,icons/Trait_highthirst.png,,lowthirst
+짧은 시야;shortsighted,2,icons/Trait_shortsighted.png,,eagleeyed
+정독;slowreader,2,icons/Trait_slowreader.png,,fastreader;illiterate
+소화불량;weakstomach,2,icons/Trait_weakstomach.png,,irongut
+느린 치유;slowhealer,3,icons/Trait_slowhealer.png,,fasthealer
+골초;smoker,3,icons/Trait_smoker.png,,athletic
+광장 공포증;agoraphobic,4,icons/Trait_agoraphobic.png,,Desensitized;claustrophobic;adrenalinejunkie
+밀실 공포증;claustrophobic,4,icons/Trait_claustophobic.png,,brave;agoraphobic;adrenalinejunkie;Desensitized
+넘치는 존재감;conspicuous,4,icons/Trait_conspicuous.png,,inconspicuous
+어두운 귀;hardofhearing,4,icons/Trait_hardofhearing.png,,keenhearing;deaf
+대식가;heartyappetite,4,icons/Trait_heartyappetite.png,,Very Underweight;lighteater
+질병에 취약함;pronetoillness,4,icons/Trait_hypercondriac.png,,resilient
+잠꾸러기;needsmoresleep,4,icons/Trait_needsmoresleep.png,,needslesssleep
+천식환자;asthmatic,5,icons/Trait_asthmatic.png,,
+피 공포증;hemophobic,5,icons/Trait_hemophobic.png,,Desensitized
+평화주의자;pacifist,5,icons/Trait_pacifist.png,,
+비체계적인;disorganized,6,icons/Trait_disorganized.png,,organized
+연약함;feeble,6,icons/Trait_feeble.png,str:-2,weak;stout;strong
+건강 이상;out of shape,6,icons/Trait_out_of_shape.png,fit:-2,athletic;fit;unfit
+수면장애;insomniac,6,icons/Trait_insomniac.png,,
+느린 학습;slowlearner,6,icons/Trait_slowlearner.png,,crafty;fastlearner
+얇은 피부;thinskinned,8,icons/Trait_thinskinned.png,,thickskinned
+문맹;illiterate,10,icons/Trait_illiterate.png,,slowreader;fastreader
+약함;weak,10,icons/Trait_weak.png,str:-5,strong;stout;feeble
+비실함;unfit,10,icons/Trait_unfit.png,fit:-4,athletic;fit;out of shape
+청각장애;deaf,12,icons/Trait_deaf.png,,hardofhearing;keenhearing

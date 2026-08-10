@@ -186,6 +186,7 @@ function renderUI() {
     document.getElementById("load-btn").innerText = translations[currentLang].load;
     document.getElementById("del-btn").innerText = translations[currentLang].del;
     document.getElementById("rst-btn").innerText = translations[currentLang].reset;
+    document.getElementById("bat-btn").innerText = translations[currentLang].bat;
     document.getElementById("open-preview").innerText = translations[currentLang].open_preview;
 
     document.getElementById("close-preview").innerText = translations[currentLang].close_preview;
