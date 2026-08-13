@@ -1,0 +1,70 @@
+let batmapper = {};
+
+Papa.parse("data/batmaker.csv", {
+    download: true,
+    header: true,
+    complete: (results) => {
+        results.data.forEach(row => {
+            if (row.key && row.value) {
+                batmapper[row.key.trim()] = row.value.trim();
+            }
+        });
+    }
+});
+
+function downloadBat() {
+    const cache = loadCache();
+
+    const lines = [];
+    
+
+    for (const [buildName, url] of Object.entries(cache)) {
+        try {
+            const parsedUrl = new URL(url, window.location.origin);
+            const job = parsedUrl.searchParams.get("job") || "No job";
+            const traits = parsedUrl.searchParams.get("traits");
+            
+            const traitList = traits ? traits.split(",").map(trait => batmapper[trait]).filter(Boolean).join(";") : "";
+            const parsedName = buildName.replace(/[%!&|<>^]/g, "_");
+
+            const value = `${parsedName}:${batmapper[job]};${traitList};`;
+
+            lines.push(`SET "VALUE=${value}"`);
+
+            lines.push(`echo %VALUE% >> saved_builds.txt`);
+            lines.push("");
+        } catch (e) {
+            console.warn(`Failed to parse build URL: ${buildName}`, e);
+        }
+    }
+
+    const batContent = [
+        "@echo off",
+        "chcp 65001 > nul",
+        "cd /d \"%USERPROFILE%/Zomboid/Lua\"",
+        "echo. > saved_builds.txt",
+        ...lines
+    ].join("\r\n");
+
+    const blob = new Blob(
+        ["\uFEFF", batContent],
+        { type: "application/bat" }
+    );
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+
+    a.href = url;
+    a.download = "export_saved_builds.bat";
+
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    URL.revokeObjectURL(url);
+}
+
+document.getElementById("bat-btn").addEventListener("click", () => {
+    downloadBat();
+    alert("다운로드된 .bat 파일을 실행하면 저장된 빌드가 게임에 추가됩니다. 기존 빌드 목록은 초기화됩니다.");
+});
