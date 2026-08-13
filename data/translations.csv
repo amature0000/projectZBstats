@@ -9,7 +9,7 @@ build_list_placeholder,빌드 선택,Select Build
 load,열기,Load
 del,삭제,Delete
 reset,초기화,Reset
-bat,게임으로 가져오기,Import to Game
+bat,게임에 적용,Import to Game
 open_preview,저장,save
 sum,포인트,Point
 strength,근력,Strength
