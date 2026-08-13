@@ -1,16 +1,16 @@
-let batmapper = {};
+// let batmapper = {};
 
-Papa.parse("data/batmaker.csv", {
-    download: true,
-    header: true,
-    complete: (results) => {
-        results.data.forEach(row => {
-            if (row.key && row.value) {
-                batmapper[row.key.trim()] = row.value.trim();
-            }
-        });
-    }
-});
+// Papa.parse("data/batmaker.csv", {
+//     download: true,
+//     header: true,
+//     complete: (results) => {
+//         results.data.forEach(row => {
+//             if (row.key && row.value) {
+//                 batmapper[row.key.trim()] = row.value.trim();
+//             }
+//         });
+//     }
+// });
 
 function downloadBat() {
     const cache = loadCache();
@@ -24,10 +24,10 @@ function downloadBat() {
             const job = parsedUrl.searchParams.get("job") || "No job";
             const traits = parsedUrl.searchParams.get("traits");
             
-            const traitList = traits ? traits.split(",").map(trait => batmapper[trait]).filter(Boolean).join(";") : "";
+            const traitList = traits ? traits.split(",").join(";") : "";
             const parsedName = buildName.replace(/[%!&|<>^]/g, "_");
 
-            const value = `${parsedName}:${batmapper[job]};${traitList};`;
+            const value = `${parsedName}:${job};${traitList};`;
 
             lines.push(`SET "VALUE=${value}"`);
 
