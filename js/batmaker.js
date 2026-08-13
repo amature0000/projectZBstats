@@ -66,5 +66,5 @@ function downloadBat() {
 
 document.getElementById("bat-btn").addEventListener("click", () => {
     downloadBat();
-    alert("다운로드된 .bat 파일을 실행하면 저장된 빌드가 게임에 추가됩니다. 기존 빌드 목록은 초기화됩니다.");
+    alert("다운로드된 .bat 파일을 실행하면 빌드 목록들을 게임에 적용합니다. 게임에 저장된 빌드 목록은 초기화됩니다.");
 });
