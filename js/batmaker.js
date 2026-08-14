@@ -21,7 +21,7 @@ function downloadBat() {
     for (const [buildName, url] of Object.entries(cache)) {
         try {
             const parsedUrl = new URL(url, window.location.origin);
-            const job = parsedUrl.searchParams.get("job") || "No job";
+            const job = parsedUrl.searchParams.get("job") || "unemployed";
             const traits = parsedUrl.searchParams.get("traits");
             
             const traitList = traits ? traits.split(",").join(";") : "";
