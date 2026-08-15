@@ -41,8 +41,8 @@ function downloadBat() {
     const batContent = [
         "@echo off",
         "chcp 65001 > nul",
-        "cd /d \"%USERPROFILE%/Zomboid/Lua\"",
-        "echo. > saved_builds.txt",
+        "cd /d \"%USERPROFILE%/Zomboid/Lua\"\n",
+        "echo. > saved_builds.txt\n",
         ...lines
     ].join("\r\n");
 
