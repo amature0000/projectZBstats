@@ -55,7 +55,7 @@ function downloadBat() {
     const a = document.createElement("a");
 
     a.href = url;
-    a.download = "export_saved_builds.bat";
+    a.download = "apply_saved_builds.bat";
 
     document.body.appendChild(a);
     a.click();
