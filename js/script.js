@@ -2,8 +2,7 @@
 const CONSTANTS = {
     IGNORE_KEYS: ['value', 'str', 'fit', 'displayName', 'iconsrc', 'banned', 'id'],
     DEFAULT_STATS: { strength: 5, fitness: 5 },
-    STAT_LIMIT: 10,
-    LANGUAGES: { KO: 'ko', EN: 'en' }
+    STAT_LIMIT: 10
 };
 
 // ===== 전역 변수 =====
@@ -11,65 +10,56 @@ const positiveDiv = document.getElementById('positive-items');
 const negativeDiv = document.getElementById('negative-items');
 const jobsDiv = document.getElementById('jobs');
 const resultPanel = document.getElementById("result-panel");
+const CURRENTLANG = 'ko';
 
 let allJobs = [];
 let allItems = [];
-let currentLang = CONSTANTS.LANGUAGES.KO;
-let extraStats = {};
-let selectedIcons = [];
 let translations = { ko: {}, en: {} };
 let descriptions = { ko: {}, en: {} };
 
-// ===== 번역 로드 =====
-Papa.parse("data/translations.csv", {
-    download: true,
-    header: true,
-    complete: (results) => {
-        results.data.forEach(row => {
-            const key = row.key.trim();
-            if (!translations.ko[key]) translations.ko[key] = row.ko.trim();
-            if (!translations.en[key]) translations.en[key] = row.en.trim();
-        });
-    }
-});
+let extraStats = {};
+let selectedIcons = [];
 
-// ===== 설명 로드 =====
-function loadDescriptions(callback) {
-    Papa.parse("data/desc.csv", {
-        download: true,
-        header: true,
-        complete: (results) => {
-            results.data.forEach(row => {
-                const key = (row.key || "").trim();
-                if (!key) return;
-                if (row.ko) descriptions.ko[key] = row.ko.trim();
-                if (row.en) descriptions.en[key] = row.en.trim();
-            });
-            callback();
-        }
-    });
-}
 
-// ===== CSV 로드 =====
-function loadCSV() {
-    loadDescriptions(() => {
-        Papa.parse("data/jobs.csv", {
+async function loadCSV(path) {
+    return new Promise((resolve, reject) => {
+        Papa.parse(path, {
             download: true,
             header: true,
-            complete: (results) => {
-                allJobs = results.data;
-                Papa.parse("data/items.csv", {
-                    download: true,
-                    header: true,
-                    complete: (results2) => {
-                        allItems = results2.data;
-                        renderUI();
-                    }
-                });
-            }
+            complete: resolve,
+            error: reject
         });
     });
 }
+
+async function loadData() {
+    const [transResult, jobsResult, itemsResult, descResult] = await Promise.all([
+        loadCSV("data/translations.csv"),
+        loadCSV("data/jobs.csv"),
+        loadCSV("data/items.csv"),
+        loadCSV("data/desc.csv")
+    ]);
+
+    transResult.data.forEach(row => {
+        const key = (row.key || "").trim();
+        if (!translations.ko[key]) translations.ko[key] = (row.ko || "").trim();
+        if (!translations.en[key]) translations.en[key] = (row.en || "").trim();
+    });
+
+    descResult.data.forEach(row => {
+        const key = (row.key || "").trim();
+        if (!key) return;
+
+        if (row.ko) descriptions.ko[key] = row.ko.trim();
+        if (row.en) descriptions.en[key] = row.en.trim();
+    });
+
+    allJobs = jobsResult.data;
+    allItems = itemsResult.data;
+
+    renderUI();
+}
+
 
 // ===== 통계 파싱 =====
 function parseStats(statsStr = "") {
@@ -95,7 +85,7 @@ function filterStats(dataset) {
 // ===== 옵션 생성 =====
 function createOption(row, isJob) {
     const names = row["항목"].split(";");
-    const displayName = names[currentLang === "ko" ? 0 : 1] || names[0];
+    const displayName = names[0];
     const value = parseInt(row["값"]) || 0;
     const stats = parseStats(row.stats);
     const iconSrc = row.icon?.trim() || "default.png";
@@ -108,7 +98,7 @@ function createOption(row, isJob) {
     const colorClass = !isJob ? (value >= 0 ? "text-red-600" : "text-green-600") : "";
     const displayValue = value >= 0 ? `+${value}` : value;
     const descriptionKey = names[1].trim();
-    const description = descriptions[currentLang][descriptionKey];
+    const description = descriptions[CURRENTLANG][descriptionKey];
 
     label.innerHTML = `
         <div class="flex items-center min-w-[150px]">
@@ -179,19 +169,19 @@ function renderUI() {
         }
     });
     
-    document.getElementById("title_placeholder").innerText = translations[currentLang].title_placeholder;
-    document.getElementById("job_placeholder").innerText = translations[currentLang].job_placeholder;
-    document.getElementById("trait_placeholder").innerText = translations[currentLang].trait_placeholder;
+    document.getElementById("title_placeholder").innerText = translations[CURRENTLANG].title_placeholder;
+    document.getElementById("job_placeholder").innerText = translations[CURRENTLANG].job_placeholder;
+    document.getElementById("trait_placeholder").innerText = translations[CURRENTLANG].trait_placeholder;
     
-    document.getElementById("load-btn").innerText = translations[currentLang].load;
-    document.getElementById("del-btn").innerText = translations[currentLang].del;
-    document.getElementById("rst-btn").innerText = translations[currentLang].reset;
-    document.getElementById("bat-btn").innerText = translations[currentLang].bat;
-    document.getElementById("open-preview").innerText = translations[currentLang].open_preview;
+    document.getElementById("load-btn").innerText = translations[CURRENTLANG].load;
+    document.getElementById("del-btn").innerText = translations[CURRENTLANG].del;
+    document.getElementById("rst-btn").innerText = translations[CURRENTLANG].reset;
+    document.getElementById("bat-btn").innerText = translations[CURRENTLANG].bat;
+    document.getElementById("open-preview").innerText = translations[CURRENTLANG].open_preview;
 
-    document.getElementById("close-preview").innerText = translations[currentLang].close_preview;
-    document.getElementById("save-preview").innerText = translations[currentLang].save_preview;
-    document.getElementById("download-preview").innerText = translations[currentLang].download_preview;
+    document.getElementById("close-preview").innerText = translations[CURRENTLANG].close_preview;
+    document.getElementById("save-preview").innerText = translations[CURRENTLANG].save_preview;
+    document.getElementById("download-preview").innerText = translations[CURRENTLANG].download_preview;
     
     loadStateFromUrl();
     refreshBuildList();
@@ -210,11 +200,11 @@ function updateResultDisplay(key, value, element) {
 
     if (key === "sum") {
         element.classList.add(value < 0 ? "text-red-600" : "text-green-600");
-        element.innerText = `${translations[currentLang].sum} : ${value}`;
+        element.innerText = `${translations[CURRENTLANG].sum} : ${value}`;
     } else {
         const isOutOfRange = value > CONSTANTS.STAT_LIMIT || value < 0;
         element.classList.add(isOutOfRange ? "text-red-600" : "text-black-600");
-        element.innerText = `${translations[currentLang][key]} : ${value}/${CONSTANTS.STAT_LIMIT}`;
+        element.innerText = `${translations[CURRENTLANG][key]} : ${value}/${CONSTANTS.STAT_LIMIT}`;
     }
 }
 
@@ -270,7 +260,7 @@ function updateSum() {
 
     // 동적 항목 표시
     Object.entries(statsTotal).forEach(([statName, value]) => {
-        const label = translations[currentLang][statName] || statName;
+        const label = translations[CURRENTLANG][statName] || statName;
         if (!extraStats[statName]) {
             const div = document.createElement('div');
             div.id = `result-${statName}`;
@@ -339,8 +329,12 @@ function renderSelectedIcons() {
     });
 }
 
+document.getElementById("rst-btn").addEventListener("click", () => {
+    window.location.href = window.location.pathname;
+});
+
 // ===== 초기화 =====
-loadCSV();
+loadData();
 
 // ==========
 // document.getElementById("lang-ko").addEventListener("click", () => {
@@ -352,7 +346,3 @@ loadCSV();
 //     currentLang = CONSTANTS.LANGUAGES.EN;
 //     renderUI();
 // });
-
-document.getElementById("rst-btn").addEventListener("click", () => {
-    window.location.href = window.location.pathname;
-});

@@ -43,7 +43,7 @@ function renderPreview() {
     const customStatsHTML = Object.entries(window.currentResult.customStats)
         .filter(([_, value]) => value !== 0)
         .map(([key, value]) => {
-            const label = translations[currentLang][key] || key;
+            const label = translations[CURRENTLANG][key] || key;
 
             return `
             <div class="grid grid-cols-[1fr_auto] items-center border rounded px-3 py-1">
@@ -60,21 +60,21 @@ function renderPreview() {
         <div class="grid grid-cols-3 gap-4 text-center">
 
             <div class="border rounded p-3">
-                <div class="font-bold">${translations[currentLang].strength}</div>
+                <div class="font-bold">${translations[CURRENTLANG].strength}</div>
                 <div class="text-2xl">
                     ${window.currentResult.strength}
                 </div>
             </div>
 
             <div class="border rounded p-3">
-                <div class="font-bold">${translations[currentLang].fitness}</div>
+                <div class="font-bold">${translations[CURRENTLANG].fitness}</div>
                 <div class="text-2xl">
                     ${window.currentResult.fitness}
                 </div>
             </div>
 
             <div class="border rounded p-3">
-                <div class="font-bold">${translations[currentLang].sum}</div>
+                <div class="font-bold">${translations[CURRENTLANG].sum}</div>
                 <div class="text-2xl">
                     ${window.currentResult.sum}
                 </div>

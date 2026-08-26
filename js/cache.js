@@ -31,7 +31,7 @@ function deleteBuild(name) {
 
 function refreshBuildList() {
     const select = document.getElementById("build-list");
-    select.innerHTML = `<option id="build-list_placeholder" value="">${translations[currentLang].build_list_placeholder}</option>`;
+    select.innerHTML = `<option id="build-list_placeholder" value="">${translations[CURRENTLANG].build_list_placeholder}</option>`;
     const cache = loadCache();
 
     for (const [name, url] of Object.entries(cache)) {
