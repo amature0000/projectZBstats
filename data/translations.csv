@@ -1,54 +1,55 @@
 key,ko,en
-title_placeholder,Project Zomboid 직업 및 특성 계산기(B 42.20),Project Zomboid Occupations&Traits Calculator(B 42.20)
-job_placeholder,직업,Occupation
-trait_placeholder,특성,Trait
-close_preview,닫기,close
-save_preview,저장,save
-download_preview,이미지 다운로드,download image
-build_list_placeholder,빌드 선택,Select Build
-load,열기,Load
-del,삭제,Delete
-reset,초기화,Reset
-bat,빌드 목록 내보내기,Export Build List
-open_preview,저장,save
-sum,포인트,Point
-strength,근력,Strength
-fitness,체력,Fitness
-Axe,도끼,Axe
-Running,능숙한 달리기,Running
-Aiming,조준,Aiming
-Nimble,조준시 발걸음,Nimble
-Reloading,재장전,Reloading
-Carpentry,목공,Carpentry
-Foraging,채집,Foraging
-Trapping,함정,Trapping
-Maintenance,물건관리,Maintenance
-Masonry,석공술,Masonry
-ShortBlunt,짧은 둔기,Short Blunt
-LongBlunt,긴 둔기,Long Blunt
-Carving,조각술,Carving
-Sneaking,은밀한 움직임,Sneaking
-Butchering,도축,Butchering
-Cooking,요리,Cooking
-ShortBlade,단검,Short Blade
-Agriculture,농사,Agriculture
-AnimalCare,축산,Animal Care
-Fishing,낚시,Fishing
-FirstAid,의료,First Aid
-Electrical,전기공학,Electrical
-Welding,용접,Welding
-Mechanics,기계공학,Mechanics
-Tailoring,재봉,Tailoring
-Glassmaking,유리공예,Glassmaking
-Pottery,도예,Pottery
-Lightfooted,조용한 발걸음,Light footed
-NightOwl,야행성,Night Owl
-Burglar,좀도둑,Burglar Skill
-Desensitized,둔감한,Desensitized
-Axpert,도끼 전문가,Axpert
-Nutritionist,영양사,Nutritionist
-Blacksmith,금속세공,Blacksmith
-Vehicle,차량정비,Vehicle Knowledge
-Inventive,창의적인,Inventive
-Knapping,석기제작,Knapping
-Herbalist,약초꾼,Herbalist
+title_placeholder,Project Zomboid 직업 및 특성 계산기(B 42.20),
+job_placeholder,직업,
+trait_placeholder,특성,
+close_preview,닫기,
+save_preview,저장,
+download_preview,이미지 다운로드,
+build_list_placeholder,빌드 선택,
+load,열기,
+del,삭제,
+reset,초기화,
+bat,빌드 목록 내보내기,
+open_preview,저장,
+sum,포인트,
+
+strength,근력,
+fitness,체력,
+Axe,도끼,
+Running,능숙한 달리기,
+Aiming,조준,
+Nimble,조준시 발걸음,
+Reloading,재장전,
+Carpentry,목공,
+Foraging,채집,
+Trapping,함정,
+Maintenance,물건관리,
+Masonry,석공술,
+ShortBlunt,짧은 둔기,
+LongBlunt,긴 둔기,
+Carving,조각술,
+Sneaking,은밀한 움직임,
+Butchering,도축,
+Cooking,요리,
+ShortBlade,단검,
+Agriculture,농사,
+AnimalCare,축산,
+Fishing,낚시,
+FirstAid,의료,
+Electrical,전기공학,
+Welding,용접,
+Mechanics,기계공학,
+Tailoring,재봉,
+Glassmaking,유리공예,
+Pottery,도예,
+Lightfooted,조용한 발걸음,
+NightOwl,야행성,
+Burglar,좀도둑,
+Desensitized,둔감한,
+Axpert,도끼 전문가,
+Nutritionist,영양사,
+Blacksmith,금속세공,
+Vehicle,차량정비,
+Inventive,창의적인,
+Knapping,석기제작,
+Herbalist,약초꾼,

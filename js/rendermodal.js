@@ -27,23 +27,10 @@ function renderPreview() {
     const negativeIcons = window.currentResult.icons.filter(icon => icon.value > 0);
     const neutralIcons = window.currentResult.icons.filter(icon => icon.value === 0);
 
-    const iconHTML = window.currentResult.icons.map(icon => `
-        <div class="flex flex-col items-center w-20">
-            <img
-                src="${icon.src}"
-                class="w-12 h-12">
-
-            <span
-                class="text-xs text-center mt-1">
-                ${icon.name}
-            </span>
-        </div>
-    `).join("");
-
     const customStatsHTML = Object.entries(window.currentResult.customStats)
         .filter(([_, value]) => value !== 0)
         .map(([key, value]) => {
-            const label = translations[CURRENTLANG][key] || key;
+            const label = tr[CURRENTLANG][key] || key;
 
             return `
             <div class="grid grid-cols-[1fr_auto] items-center border rounded px-3 py-1">
@@ -60,21 +47,21 @@ function renderPreview() {
         <div class="grid grid-cols-3 gap-4 text-center">
 
             <div class="border rounded p-3">
-                <div class="font-bold">${translations[CURRENTLANG].strength}</div>
+                <div class="font-bold">${tr[CURRENTLANG].strength}</div>
                 <div class="text-2xl">
                     ${window.currentResult.strength}
                 </div>
             </div>
 
             <div class="border rounded p-3">
-                <div class="font-bold">${translations[CURRENTLANG].fitness}</div>
+                <div class="font-bold">${tr[CURRENTLANG].fitness}</div>
                 <div class="text-2xl">
                     ${window.currentResult.fitness}
                 </div>
             </div>
 
             <div class="border rounded p-3">
-                <div class="font-bold">${translations[CURRENTLANG].sum}</div>
+                <div class="font-bold">${tr[CURRENTLANG].sum}</div>
                 <div class="text-2xl">
                     ${window.currentResult.sum}
                 </div>

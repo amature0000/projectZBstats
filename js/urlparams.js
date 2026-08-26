@@ -30,10 +30,10 @@ function loadStateFromUrl() {
         var job = params.get('job');
         var traits = params.get('traits') ? params.get('traits').split(',') : [];
         if (job || traits.length) {
-            document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
-                if (input.dataset.id === job) {
-                    input.checked = true;
-                }
+            const jobInput = document.querySelector(`input[type="radio"][data-id="${job}"]`);
+            if (jobInput) jobInput.checked = true;
+            
+            document.querySelectorAll('input[type="checkbox"]').forEach(input => {
                 if (traits.includes(input.dataset.id)) {
                     input.checked = true;
                 }

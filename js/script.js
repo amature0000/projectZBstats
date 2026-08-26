@@ -12,9 +12,11 @@ const jobsDiv = document.getElementById('jobs');
 const resultPanel = document.getElementById("result-panel");
 const CURRENTLANG = 'ko';
 
-let allJobs = [];
-let allItems = [];
-let translations = { ko: {}, en: {} };
+let all_jobs = [];
+let all_traits = [];
+let tr = { ko: {}, en: {} };
+let tr_jobs = { ko: {}, en: {} };
+let tr_traits = { ko: {}, en: {} };
 let descriptions = { ko: {}, en: {} };
 
 let extraStats = {};
@@ -33,30 +35,41 @@ async function loadCSV(path) {
 }
 
 async function loadData() {
-    const [transResult, jobsResult, itemsResult, descResult] = await Promise.all([
+    const [trResult, trJobResult, trTraitResult, descResult, jobsResult, traitsResult] = await Promise.all([
         loadCSV("data/translations.csv"),
+        loadCSV("data/translations_jobs.csv"),
+        loadCSV("data/translations_traits.csv"),
+        loadCSV("data/translations_desc.csv"),
         loadCSV("data/jobs.csv"),
-        loadCSV("data/items.csv"),
-        loadCSV("data/desc.csv")
+        loadCSV("data/traits.csv")
     ]);
 
-    transResult.data.forEach(row => {
+    trResult.data.forEach(row => {
         const key = (row.key || "").trim();
-        if (!translations.ko[key]) translations.ko[key] = (row.ko || "").trim();
-        if (!translations.en[key]) translations.en[key] = (row.en || "").trim();
+        if (!tr.ko[key]) tr.ko[key] = (row.ko || "").trim();
+        if (!tr.en[key]) tr.en[key] = (row.en || "").trim();
+    });
+
+    trJobResult.data.forEach(row => {
+        const key = (row.key || "").trim();
+        if (!tr_jobs.ko[key]) tr_jobs.ko[key] = (row.ko || "").trim();
+        if (!tr_jobs.en[key]) tr_jobs.en[key] = (row.en || "").trim();
+    });
+
+    trTraitResult.data.forEach(row => {
+        const key = (row.key || "").trim();
+        if (!tr_traits.ko[key]) tr_traits.ko[key] = (row.ko || "").trim();
+        if (!tr_traits.en[key]) tr_traits.en[key] = (row.en || "").trim();
     });
 
     descResult.data.forEach(row => {
         const key = (row.key || "").trim();
-        if (!key) return;
-
         if (row.ko) descriptions.ko[key] = row.ko.trim();
         if (row.en) descriptions.en[key] = row.en.trim();
     });
 
-    allJobs = jobsResult.data;
-    allItems = itemsResult.data;
-
+    all_jobs = jobsResult.data;
+    all_traits = traitsResult.data;
     renderUI();
 }
 
@@ -84,8 +97,8 @@ function filterStats(dataset) {
 
 // ===== 옵션 생성 =====
 function createOption(row, isJob) {
-    const names = row["항목"].split(";");
-    const displayName = names[0];
+    const name = row["항목"];
+    const displayName = isJob ? tr_jobs[CURRENTLANG][name] : tr_traits[CURRENTLANG][name];
     const value = parseInt(row["값"]) || 0;
     const stats = parseStats(row.stats);
     const iconSrc = row.icon?.trim() || "default.png";
@@ -97,8 +110,7 @@ function createOption(row, isJob) {
     const iconSize = isJob ? "w-16 h-16" : "w-6 h-6";
     const colorClass = !isJob ? (value >= 0 ? "text-red-600" : "text-green-600") : "";
     const displayValue = value >= 0 ? `+${value}` : value;
-    const descriptionKey = names[1].trim();
-    const description = descriptions[CURRENTLANG][descriptionKey];
+    const description = descriptions[CURRENTLANG][name];
 
     label.innerHTML = `
         <div class="flex items-center min-w-[150px]">
@@ -112,7 +124,6 @@ function createOption(row, isJob) {
     `;
 
     const input = label.querySelector("input");
-    const icon = label.querySelector("img");
     // 툴팁 설정
     if (!isJob) {
         label.dataset.title = description;
@@ -137,7 +148,7 @@ function createOption(row, isJob) {
     input.dataset.displayName = displayName;
     input.dataset.iconsrc = iconSrc;
     input.dataset.value = value;
-    input.dataset.id = descriptionKey;
+    input.dataset.id = name;
 
     input.addEventListener("change", () => {
         updateSum();
@@ -152,14 +163,14 @@ function renderUI() {
     positiveDiv.innerHTML = "";
     negativeDiv.innerHTML = "";
 
-    allJobs.forEach(row => {
+    all_jobs.forEach(row => {
         if (row["항목"]) {
             const option = createOption(row, true);
             jobsDiv.appendChild(option.label);
         }
     });
 
-    allItems.forEach(row => {
+    all_traits.forEach(row => {
         if (row["항목"]) {
             const option = createOption(row, false);
             if (option.value >= 0)
@@ -169,19 +180,19 @@ function renderUI() {
         }
     });
     
-    document.getElementById("title_placeholder").innerText = translations[CURRENTLANG].title_placeholder;
-    document.getElementById("job_placeholder").innerText = translations[CURRENTLANG].job_placeholder;
-    document.getElementById("trait_placeholder").innerText = translations[CURRENTLANG].trait_placeholder;
+    document.getElementById("title_placeholder").innerText = tr[CURRENTLANG].title_placeholder;
+    document.getElementById("job_placeholder").innerText = tr[CURRENTLANG].job_placeholder;
+    document.getElementById("trait_placeholder").innerText = tr[CURRENTLANG].trait_placeholder;
     
-    document.getElementById("load-btn").innerText = translations[CURRENTLANG].load;
-    document.getElementById("del-btn").innerText = translations[CURRENTLANG].del;
-    document.getElementById("rst-btn").innerText = translations[CURRENTLANG].reset;
-    document.getElementById("bat-btn").innerText = translations[CURRENTLANG].bat;
-    document.getElementById("open-preview").innerText = translations[CURRENTLANG].open_preview;
+    document.getElementById("load-btn").innerText = tr[CURRENTLANG].load;
+    document.getElementById("del-btn").innerText = tr[CURRENTLANG].del;
+    document.getElementById("rst-btn").innerText = tr[CURRENTLANG].reset;
+    document.getElementById("bat-btn").innerText = tr[CURRENTLANG].bat;
+    document.getElementById("open-preview").innerText = tr[CURRENTLANG].open_preview;
 
-    document.getElementById("close-preview").innerText = translations[CURRENTLANG].close_preview;
-    document.getElementById("save-preview").innerText = translations[CURRENTLANG].save_preview;
-    document.getElementById("download-preview").innerText = translations[CURRENTLANG].download_preview;
+    document.getElementById("close-preview").innerText = tr[CURRENTLANG].close_preview;
+    document.getElementById("save-preview").innerText = tr[CURRENTLANG].save_preview;
+    document.getElementById("download-preview").innerText = tr[CURRENTLANG].download_preview;
     
     loadStateFromUrl();
     refreshBuildList();
@@ -200,11 +211,11 @@ function updateResultDisplay(key, value, element) {
 
     if (key === "sum") {
         element.classList.add(value < 0 ? "text-red-600" : "text-green-600");
-        element.innerText = `${translations[CURRENTLANG].sum} : ${value}`;
+        element.innerText = `${tr[CURRENTLANG].sum} : ${value}`;
     } else {
         const isOutOfRange = value > CONSTANTS.STAT_LIMIT || value < 0;
         element.classList.add(isOutOfRange ? "text-red-600" : "text-black-600");
-        element.innerText = `${translations[CURRENTLANG][key]} : ${value}/${CONSTANTS.STAT_LIMIT}`;
+        element.innerText = `${tr[CURRENTLANG][key]} : ${value}/${CONSTANTS.STAT_LIMIT}`;
     }
 }
 
@@ -260,7 +271,7 @@ function updateSum() {
 
     // 동적 항목 표시
     Object.entries(statsTotal).forEach(([statName, value]) => {
-        const label = translations[CURRENTLANG][statName] || statName;
+        const label = tr[CURRENTLANG][statName] || statName;
         if (!extraStats[statName]) {
             const div = document.createElement('div');
             div.id = `result-${statName}`;
